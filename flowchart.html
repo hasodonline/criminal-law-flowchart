@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>דיני עונשין - תרשים זרימה לניתוח קייסים | ד"ר שי פרבר</title>
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--card2:#334155;--accent:#3b82f6;--accent2:#8b5cf6;--green:#10b981;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--cyan:#06b6d4;--text:#e2e8f0;--text2:#94a3b8;--border:#475569;--step1:#3b82f6;--step2:#8b5cf6;--step3:#06b6d4;--step4:#f59e0b;--step5:#ec4899;--step6:#10b981;--step7:#ef4444}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;direction:rtl}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+h1{text-align:center;font-size:2.2em;margin:30px 0 10px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{text-align:center;color:var(--text2);margin-bottom:30px;font-size:1.1em}
+.exam-badge{background:var(--red);color:#fff;padding:3px 12px;border-radius:20px;font-size:.8em;font-weight:700;display:inline-block;margin:0 5px}
+/* NAV */
+.nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0 30px;position:sticky;top:0;z-index:100;background:var(--bg);padding:15px 0;border-bottom:1px solid var(--border)}
+.nav a{padding:8px 18px;border-radius:25px;text-decoration:none;font-size:.9em;font-weight:600;transition:.3s;border:2px solid}
+.nav a:nth-child(1){color:var(--step1);border-color:var(--step1)}.nav a:nth-child(1):hover{background:var(--step1);color:#fff}
+.nav a:nth-child(2){color:var(--step2);border-color:var(--step2)}.nav a:nth-child(2):hover{background:var(--step2);color:#fff}
+.nav a:nth-child(3){color:var(--step3);border-color:var(--step3)}.nav a:nth-child(3):hover{background:var(--step3);color:#fff}
+.nav a:nth-child(4){color:var(--step4);border-color:var(--step4)}.nav a:nth-child(4):hover{background:var(--step4);color:#fff}
+.nav a:nth-child(5){color:var(--step5);border-color:var(--step5)}.nav a:nth-child(5):hover{background:var(--step5);color:#fff}
+.nav a:nth-child(6){color:var(--step6);border-color:var(--step6)}.nav a:nth-child(6):hover{background:var(--step6);color:#fff}
+.nav a:nth-child(7){color:var(--step7);border-color:var(--step7)}.nav a:nth-child(7):hover{background:var(--step7);color:#fff}
+/* STEP SECTIONS */
+.step-section{margin:40px 0;scroll-margin-top:80px}
+.step-header{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+.step-num{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4em;font-weight:900;color:#fff;flex-shrink:0}
+.step-title{font-size:1.5em;font-weight:700}
+.card{background:var(--card);border-radius:16px;padding:25px;margin:15px 0;border-right:4px solid var(--accent);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.card h3{margin-bottom:12px;font-size:1.15em}
+.card ul{padding-right:20px}
+.card li{margin:6px 0}
+.sub-card{background:var(--card2);border-radius:12px;padding:18px;margin:12px 0}
+.sub-card h4{margin-bottom:8px;font-size:1.05em}
+/* FLOWCHART VISUAL */
+.flow-container{display:flex;flex-direction:column;align-items:center;gap:0;margin:20px 0}
+.flow-box{background:var(--card);border-radius:14px;padding:18px 28px;text-align:center;font-weight:600;font-size:1em;max-width:600px;width:100%;position:relative;border:2px solid var(--border);transition:.3s}
+.flow-box:hover{transform:scale(1.02);box-shadow:0 0 25px rgba(59,130,246,.3)}
+.flow-box.decision{background:var(--card2);border-color:var(--orange);transform:rotate(0);clip-path:none;border-radius:14px;border-right:4px solid var(--orange)}
+.flow-box.action{border-color:var(--green);border-right:4px solid var(--green)}
+.flow-box.result-yes{border-color:var(--green);background:rgba(16,185,129,.1)}
+.flow-box.result-no{border-color:var(--red);background:rgba(239,68,68,.1)}
+.flow-arrow{width:3px;height:30px;background:var(--text2);position:relative}
+.flow-arrow::after{content:'▼';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);color:var(--text2);font-size:.7em}
+.flow-branch{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.flow-branch>div{flex:1;min-width:250px;max-width:350px}
+.flow-label{text-align:center;font-weight:700;margin:5px 0;font-size:.9em}
+.flow-label.yes{color:var(--green)}
+.flow-label.no{color:var(--red)}
+/* TAGS */
+.tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8em;font-weight:600;margin:2px}
+.tag-section{background:rgba(59,130,246,.2);color:var(--accent)}
+.tag-case{background:rgba(139,92,246,.2);color:var(--accent2)}
+.tag-doctrine{background:rgba(236,72,153,.2);color:var(--pink)}
+.tag-warn{background:rgba(239,68,68,.2);color:var(--red)}
+.tag-tip{background:rgba(16,185,129,.2);color:var(--green)}
+/* HIGHLIGHT BOX */
+.highlight{background:rgba(59,130,246,.1);border:1px solid var(--accent);border-radius:12px;padding:15px;margin:12px 0}
+.warning{background:rgba(239,68,68,.1);border:1px solid var(--red);border-radius:12px;padding:15px;margin:12px 0}
+.tip{background:rgba(16,185,129,.1);border:1px solid var(--green);border-radius:12px;padding:15px;margin:12px 0}
+/* TABLES */
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:.92em}
+th{background:var(--card2);padding:12px;text-align:right;border-bottom:2px solid var(--accent)}
+td{padding:10px 12px;border-bottom:1px solid var(--border)}
+tr:hover td{background:rgba(59,130,246,.05)}
+/* EXAM CASES */
+.exam-section{margin:50px 0;scroll-margin-top:80px}
+.exam-card{background:var(--card);border-radius:16px;margin:20px 0;overflow:hidden;border:1px solid var(--border)}
+.exam-header{padding:20px 25px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:.3s}
+.exam-header:hover{background:var(--card2)}
+.exam-header h3{font-size:1.1em}
+.exam-toggle{font-size:1.5em;transition:.3s;color:var(--text2)}
+.exam-body{padding:0 25px 25px;display:none}
+.exam-body.open{display:block}
+.exam-toggle.open{transform:rotate(180deg)}
+.exam-facts{background:var(--card2);border-radius:12px;padding:18px;margin:15px 0;border-right:3px solid var(--cyan)}
+.exam-analysis{margin:15px 0}
+.exam-step{border-right:3px solid;padding:12px 18px;margin:10px 0;border-radius:0 12px 12px 0}
+.exam-step h4{margin-bottom:8px}
+.exam-step.s1{border-color:var(--step1)}.exam-step.s2{border-color:var(--step2)}.exam-step.s3{border-color:var(--step3)}.exam-step.s4{border-color:var(--step4)}.exam-step.s5{border-color:var(--step5)}.exam-step.s6{border-color:var(--step6)}
+/* COLLAPSIBLE */
+details{margin:10px 0}
+details summary{cursor:pointer;font-weight:600;padding:10px;background:var(--card2);border-radius:8px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+details summary::after{content:'◀';transition:.3s;font-size:.8em}
+details[open] summary::after{transform:rotate(-90deg)}
+details>div{padding:15px;background:var(--card);border-radius:0 0 8px 8px;border:1px solid var(--border);border-top:none}
+/* PRINT */
+@media print{body{background:#fff;color:#000}.card,.sub-card,.exam-card{border:1px solid #ccc;box-shadow:none}.nav{display:none}.exam-body{display:block!important}}
+@media(max-width:768px){.container{padding:10px}h1{font-size:1.6em}.flow-branch{flex-direction:column;align-items:center}.nav a{padding:6px 12px;font-size:.8em}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>תרשים זרימה לניתוח קייסים בדיני עונשין</h1>
+<p class="subtitle">ד"ר שי פרבר | מכללת שערי משפט | מועד א': 27.02.2026 <span class="exam-badge">בעוד 3 ימים!</span></p>
+
+<div class="nav">
+<a href="#step0">0. זיהוי</a>
+<a href="#step1">1. יסוד עובדתי</a>
+<a href="#step2">2. קשר סיבתי</a>
+<a href="#step3">3. יסוד נפשי</a>
+<a href="#step4">4. צורות נגזרות</a>
+<a href="#step5">5. סייגים</a>
+<a href="#cases">מבחנים</a>
+</div>
+
+<!-- ============================================ -->
+<!-- STEP 0: IDENTIFICATION -->
+<!-- ============================================ -->
+<section class="step-section" id="step0">
+<div class="step-header">
+<div class="step-num" style="background:var(--step1)">0</div>
+<div class="step-title" style="color:var(--step1)">שלב מקדמי - זיהוי העבירות והנאשמים</div>
+</div>
+
+<div class="card" style="border-color:var(--step1)">
+<h3>לפני שמתחילים - מה עושים עם הקייס?</h3>
+<div class="tip">
+<strong>טיפ מבחן:</strong> קרא/י את כל העובדות. סמן/י כל שחקן ולכל שחקן - מהן העבירות הפוטנציאליות שלו. נתח/י כל נאשם × כל עבירה בנפרד.
+</div>
+<ol>
+<li><strong>זהה את כל הנאשמים הפוטנציאליים</strong> - כל מי שפעל בסיפור</li>
+<li><strong>זהה את סעיפי העבירה</strong> שניתנו בשאלה (תמיד יינתנו)</li>
+<li><strong>סווג את העבירה</strong>:
+<ul>
+<li><strong>עבירת התנהגות</strong> - המעשה עצמו הוא העבירה (מטרת הסעיף = מניעת התנהגות)</li>
+<li><strong>עבירת תוצאה</strong> - צריך שתתממש תוצאה (מטרת הסעיף = מניעת תוצאה)</li>
+</ul>
+</li>
+<li><strong>לכל נאשם, שאל:</strong> האם הוא מבצע עיקרי? משדל? מסייע? מבצע בצוותא?</li>
+</ol>
+
+<div class="sub-card">
+<h4>3 מבחנים להבחנה בין עבירת התנהגות לעבירת תוצאה:</h4>
+<table>
+<tr><th>מבחן</th><th>עבירת התנהגות</th><th>עבירת תוצאה</th></tr>
+<tr><td>מטרת הסעיף</td><td>למנוע את ההתנהגות עצמה</td><td>למנוע תוצאה מסוימת</td></tr>
+<tr><td>יסוד דומיננטי</td><td>חשוב <em>איך</em> קרה</td><td>חשוב <em>מה</em> קרה</td></tr>
+<tr><td>הפרדת תוצאה</td><td>לא ניתן להפריד תוצאה מהתנהגות</td><td>ניתן להפריד</td></tr>
+</table>
+</div>
+
+<div class="sub-card">
+<h4>סוגי עבירות מיוחדים:</h4>
+<ul>
+<li><strong>עבירות סטטוס</strong> - עצם ההימצאות במצב מסוים = עבירה</li>
+<li><strong>עבירות החזקה</strong> - שליטה בדבר = עבירה (שליטה ממשית / מיוחסת / קונסטרוקטיבית) <span class="tag tag-case">פס"ד הוכשטט</span></li>
+<li><strong>עבירות מחדל</strong> - הימנעות מפעולה. 3 תנאים: נורמה אוסרת + חובה לפעול + הפרת החובה <span class="tag tag-case">פס"ד מוסאזאדי</span></li>
+<li><strong>עבירה שותקת</strong> (לא מצוין יסוד נפשי) = עבירת מחשבה פלילית</li>
+</ul>
+</div>
+</div>
+
+<div class="flow-container">
+<div class="flow-box" style="border-color:var(--step1)">קרא את העובדות → זהה נאשמים + עבירות</div>
+<div class="flow-arrow"></div>
+<div class="flow-box decision">האם הנאשם הוא המבצע העיקרי?</div>
+<div class="flow-branch">
+<div>
+<div class="flow-label yes">כן → נתח ישירות</div>
+<div class="flow-box action">המשך לשלב 1: יסוד עובדתי</div>
+</div>
+<div>
+<div class="flow-label no">לא → צד לעבירה</div>
+<div class="flow-box action">קפוץ לשלב 4: צורות נגזרות (צדדים)</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- STEP 1: FACTUAL ELEMENT -->
+<!-- ============================================ -->
+<section class="step-section" id="step1">
+<div class="step-header">
+<div class="step-num" style="background:var(--step2)">1</div>
+<div class="step-title" style="color:var(--step2)">היסוד העובדתי (Actus Reus) <span class="tag tag-section">ס' 18</span></div>
+</div>
+
+<div class="card" style="border-color:var(--step2)">
+<h3>שלושת רכיבי היסוד העובדתי</h3>
+
+<div class="sub-card">
+<h4>1. רכיב התנהגותי <span class="tag tag-warn">חובה בכל עבירה</span></h4>
+<p>מהו המעשה (או המחדל) שביצע הנאשם?</p>
+<ul>
+<li>תאר את ההתנהגות הקונקרטית</li>
+<li>בדוק: מעשה אקטיבי / מחדל / סטטוס / החזקה</li>
+<li>במחדל: הוכח חובה מכוח דין <span class="tag tag-case">פס"ד מוסאזאדי</span></li>
+</ul>
+</div>
+
+<div class="sub-card">
+<h4>2. רכיב נסיבתי <span class="tag tag-warn">חובה בכל עבירה</span></h4>
+<p>מהן הנסיבות (ה"תפאורה") שהופכות את ההתנהגות לאסורה?</p>
+<ul>
+<li>זהה את הנסיבות מתוך הסעיף</li>
+<li>בדוק שכל הנסיבות מתקיימות בפועל</li>
+<li>דוגמאות: גיל הקורבן, יחסי שררה, "שלא כדין", בעלות על רכוש</li>
+</ul>
+</div>
+
+<div class="sub-card">
+<h4>3. רכיב תוצאתי <span class="tag tag-tip">רק בעבירות תוצאה</span></h4>
+<p>מהי התוצאה שנגרמה?</p>
+<ul>
+<li>האם התוצאה שמתוארת בסעיף אכן התממשה?</li>
+<li>דוגמאות: מוות, חבלה של ממש, נזק לרכוש</li>
+<li>אם לא התממשה → בדוק ניסיון (שלב 4)</li>
+</ul>
+</div>
+</div>
+
+<div class="flow-container">
+<div class="flow-box" style="border-color:var(--step2)">בדוק: רכיב התנהגותי ✓ | רכיב נסיבתי ✓</div>
+<div class="flow-arrow"></div>
+<div class="flow-box decision">האם זו עבירת תוצאה?</div>
+<div class="flow-branch">
+<div>
+<div class="flow-label yes">כן</div>
+<div class="flow-box action">בדוק רכיב תוצאתי → המשך לשלב 2 (קש"ס)</div>
+</div>
+<div>
+<div class="flow-label no">לא (עבירת התנהגות)</div>
+<div class="flow-box action">דלג על שלב 2 → ישר לשלב 3 (יסוד נפשי)</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- STEP 2: CAUSATION -->
+<!-- ============================================ -->
+<section class="step-section" id="step2">
+<div class="step-header">
+<div class="step-num" style="background:var(--step3)">2</div>
+<div class="step-title" style="color:var(--step3)">קשר סיבתי <span class="tag tag-section">ס' 18</span> <span class="tag tag-warn">רק בעבירות תוצאה!</span></div>
+</div>
+
+<div class="card" style="border-color:var(--step3)">
+<h3>א. קשר סיבתי עובדתי - מבחן ה"אלמלא"</h3>
+<div class="highlight">
+<strong>השאלה:</strong> אלמלא התנהגות הנאשם - האם התוצאה הייתה מתרחשת?<br>
+<strong>לא</strong> = יש קש"ס עובדתי ✓ | <strong>כן</strong> = אין קש"ס ✗
+</div>
+<ul>
+<li><span class="tag tag-case">פס"ד בלקר</span> - המעשה לא חייב להיות הסיבה הבלעדית, מספיק יותר ממינימלי</li>
+<li><span class="tag tag-case">פס"ד סטרול</span> - אי מניעה ע"י אחר לא פוטרת את הגורם הראשוני</li>
+<li><span class="tag tag-case">פס"ד ברדריאן</span> - שני גורמים קטלניים → שניהם אחראים</li>
+</ul>
+</div>
+
+<div class="card" style="border-color:var(--step3)">
+<h3>ב. קשר סיבתי משפטי - מבחן הצפיות</h3>
+<div class="highlight">
+<strong>שתי שאלות:</strong><br>
+1. <strong>מסוגלות סובייקטיבית</strong> - האם הנאשם <em>יכול</em> היה לצפות את התוצאה?<br>
+2. <strong>מסוגלות אובייקטיבית-נורמטיבית</strong> - האם <em>צריך</em> היה לצפות?
+</div>
+
+<div class="sub-card">
+<h4>דוקטרינות מפתח:</h4>
+<table>
+<tr><th>דוקטרינה</th><th>תוצאה</th><th>תקדים</th></tr>
+<tr><td><strong>גולגולת דקה</strong> - רגישות הקורבן</td><td>אחראי (צפוי)</td><td>כלל כללי</td></tr>
+<tr><td><strong>גולגולת דקיקה</strong> - רגישות חריגה ונדירה</td><td>לא אחראי</td><td>פס"ד פטרומליו, פס"ד מלכה</td></tr>
+<tr><td><strong>גורם זר מתערב</strong> - אירוע חיצוני בלתי צפוי</td><td>מנתק קש"ס</td><td>פס"ד פלוני (נחש)</td></tr>
+<tr><td><strong>תגובה טבעית של הנפגע</strong></td><td>לא מנתק</td><td>פס"ד צברי, ביטון, מלאך</td></tr>
+<tr><td><strong>טיפול רפואי</strong></td><td>מנתק רק אם: עילה יחידה+מיידית + כשלים חמורים</td><td>פס"ד חסיין</td></tr>
+<tr><td><strong>החשת מוות</strong></td><td>= גרימת מוות, לא מנתק</td><td>פס"ד יקירביץ'</td></tr>
+</table>
+</div>
+</div>
+
+<div class="flow-container">
+<div class="flow-box" style="border-color:var(--step3)">מבחן האלמלא: אלמלא ההתנהגות, התוצאה הייתה מתרחשת?</div>
+<div class="flow-branch">
+<div>
+<div class="flow-label yes">לא → יש קש"ס עובדתי ✓</div>
+<div class="flow-box action">המשך למבחן הצפיות (קש"ס משפטי)</div>
+</div>
+<div>
+<div class="flow-label no">כן → אין קש"ס ✗</div>
+<div class="flow-box result-no">לא ניתן להרשיע בעבירה זו</div>
+</div>
+</div>
+<div style="margin-top:15px"></div>
+<div class="flow-box" style="border-color:var(--step3)">מבחן הצפיות: יכול וצריך היה לצפות?</div>
+<div class="flow-branch">
+<div>
+<div class="flow-label yes">כן ✓</div>
+<div class="flow-box action">המשך לשלב 3: יסוד נפשי</div>
+</div>
+<div>
+<div class="flow-label no">לא ✗</div>
+<div class="flow-box result-no">בדוק: גולגולת דקיקה? גורם זר?</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- STEP 3: MENTAL ELEMENT -->
+<!-- ============================================ -->
+<section class="step-section" id="step3">
+<div class="step-header">
+<div class="step-num" style="background:var(--step4)">3</div>
+<div class="step-title" style="color:var(--step4)">היסוד הנפשי (Mens Rea) <span class="tag tag-section">ס' 19-22</span></div>
+</div>
+
+<div class="card" style="border-color:var(--step4)">
+<h3>סוג העבירה קובע את היסוד הנפשי הנדרש</h3>
+<div class="flow-container">
+<div class="flow-box decision">מהו סוג העבירה?</div>
+<div class="flow-branch">
+<div>
+<div class="flow-label" style="color:var(--orange)">מחשבה פלילית (ס' 20)</div>
+<div class="flow-box" style="border-color:var(--orange)">ברירת מחדל + עבירות שותקות</div>
+</div>
+<div>
+<div class="flow-label" style="color:var(--cyan)">רשלנות (ס' 21)</div>
+<div class="flow-box" style="border-color:var(--cyan)">רק כשהחוק מציין במפורש</div>
+</div>
+<div>
+<div class="flow-label" style="color:var(--red)">אחריות קפידה (ס' 22)</div>
+<div class="flow-box" style="border-color:var(--red)">לא צריך יסוד נפשי כלל</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card" style="border-color:var(--orange)">
+<h3>עבירות מחשבה פלילית - הרכיב ההכרתי (מודעות)</h3>
+<div class="highlight">
+<strong>מודעות ל-3 דברים:</strong><br>
+1. מודעות ל<strong>טיב המעשה</strong> (ההתנהגות)<br>
+2. מודעות ל<strong>קיום הנסיבות</strong><br>
+3. מודעות ל<strong>אפשרות גרימת התוצאה</strong> (רק בעבירות תוצאה)
+</div>
+
+<div class="sub-card">
+<h4>3 דרכים להוכחת מודעות:</h4>
+<ol>
+<li>אמירות הנאשם עצמו</li>
+<li>ראיות נסיבתיות-חיצוניות</li>
+<li>חזקות ראייתיות (הדוקטרינות הבאות):</li>
+</ol>
+</div>
+
+<div class="sub-card" style="border-right:3px solid var(--pink)">
+<h4>דוקטרינת עצימת עיניים <span class="tag tag-section">ס' 20(ג)(1)</span></h4>
+<p><strong>חשד + אי-בירור = מודעות</strong></p>
+<ul>
+<li>אדם שחשד אך נמנע מלברר ייחשב כמודע</li>
+<li><span class="tag tag-case">פס"ד שובין</span> - הגדרת העיקרון</li>
+<li><span class="tag tag-case">פס"ד האונס בשמרת</span> - חלה על נסיבות (גיל)</li>
+<li><span class="tag tag-case">פס"ד טייב</span> - חלה גם ב"חלל תודעתי" (לא הקדיש מחשבה)</li>
+<li><span class="tag tag-case">פס"ד הר שפי</span> - חלה גם במחדל</li>
+</ul>
+<div class="warning">
+<strong>שימוש נפוץ במבחנים!</strong> בכל פעם שנאשם "לא ידע" על נסיבה אבל היו סימנים/רמזים - השתמש בעצימת עיניים.
+</div>
+</div>
+
+<div class="sub-card" style="border-right:3px solid var(--cyan)">
+<h4>חזקת המודעות הכללית (חזקת ניסיון החיים)</h4>
+<p><strong>אדם מוחזק כמודע לתוצאות הטבעיות של מעשיו</strong></p>
+<ul>
+<li>קיימת <strong>רק בעבירות תוצאה</strong>, ביחס לאפשרות גרימת התוצאה</li>
+<li><span class="tag tag-case">פס"ד בלזר</span> - נהיגה פוגענית → מוחזק כמודע לאפשרות מוות</li>
+<li><span class="tag tag-case">פס"ד מגידיש</span> - לא צריך מודעות לאופן המדויק של ההשתלשלות</li>
+</ul>
+</div>
+
+<div class="sub-card" style="border-right:3px solid var(--green)">
+<h4>הלכת הצפיות <span class="tag tag-section">ס' 20</span> <span class="tag tag-doctrine">תחליף לכוונה!</span></h4>
+<p><strong>ידיעה שהמעשה יוביל לתוצאה באופן קרוב לוודאי = כוונה</strong></p>
+<ul>
+<li>משמשת כשהסעיף דורש <strong>כוונה</strong> אך אין כוונה ישירה</li>
+<li><span class="tag tag-case">פס"ד אלרחמן</span> - נכונות לפגוע למרות אפשרות קרובה לוודאי = כוונה</li>
+<li><span class="tag tag-case">פס"ד כהן</span> - הלכת הצפיות תחליף גם למטרה</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border-color:var(--orange)">
+<h3>עבירות מחשבה פלילית - הרכיב החפצי <span class="tag tag-warn">רק בעבירות תוצאה!</span></h3>
+<table>
+<tr><th>דרגה</th><th>הגדרה</th><th>הסבר</th></tr>
+<tr><td style="color:var(--red);font-weight:700">כוונה</td><td>רצון שהתוצאה תתממש</td><td>הדרגה הגבוהה ביותר. רצה את התוצאה</td></tr>
+<tr><td style="color:var(--orange);font-weight:700">אדישות</td><td>לא אכפת אם התוצאה תתממש</td><td>פזיזות ברמה גבוהה. <span class="tag tag-case">פס"ד טמטאווי</span></td></tr>
+<tr><td style="color:var(--step4);font-weight:700">קלות דעת</td><td>נטילת סיכון בלתי סביר</td><td>לא רוצה את התוצאה אבל לוקח סיכון. <span class="tag tag-case">פס"ד ג'בריה</span></td></tr>
+</table>
+<div class="tip">
+<strong>שים לב:</strong> כוונה ואדישות = פזיזות = מספיקים לרוב העבירות. כשהסעיף דורש "כוונה" בלבד (כמו ברצח) - השתמש בהלכת הצפיות כתחליף.
+</div>
+</div>
+
+<div class="card" style="border-color:var(--cyan)">
+<h3>עבירות רשלנות <span class="tag tag-section">ס' 21</span></h3>
+<p><strong>אי-מודעות כשצריכה להיות מודעות.</strong> מבחן אובייקטיבי: מה "אדם מן היישוב" היה צריך לדעת?</p>
+<ul>
+<li>עונש: עד 3 שנים</li>
+<li>ההבדל מקלות דעת: קל הדעת <strong>מודע</strong> לסיכון, הרשלן <strong>לא מודע</strong></li>
+<li><span class="tag tag-case">פס"ד יעקובוב</span> - אלימות כלפי אשה → צריך לצפות התאבדות</li>
+</ul>
+</div>
+
+<div class="card" style="border-color:var(--red)">
+<h3>אחריות קפידה <span class="tag tag-section">ס' 22</span></h3>
+<p>אין צורך ביסוד נפשי. עצם ביצוע המעשה = עבירה.</p>
+<ul>
+<li>נטל ההוכחה על <strong>הנאשם</strong> - שלא התרשל ועשה כל שניתן</li>
+<li><span class="tag tag-case">פס"ד גדיסי</span> - אין דיון במחשבה פלילית</li>
+<li><span class="tag tag-case">פס"ד אוחנה</span> - ניתן לסתור את היסוד הנפשי</li>
+</ul>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- STEP 4: DERIVATIVE FORMS -->
+<!-- ============================================ -->
+<section class="step-section" id="step4">
+<div class="step-header">
+<div class="step-num" style="background:var(--step5)">4</div>
+<div class="step-title" style="color:var(--step5)">צורות נגזרות - ניסיון וצדדים לעבירה</div>
+</div>
+
+<!-- ATTEMPT -->
+<div class="card" style="border-color:var(--accent2)">
+<h3>דוקטרינת הניסיון <span class="tag tag-section">ס' 25</span></h3>
+<div class="highlight">
+<strong>מדרג:</strong> עבירה מושלמת > <strong>ניסיון</strong> > הכנה (לרוב לא עניש)
+</div>
+
+<div class="sub-card">
+<h4>3 מבחנים להבחנה בין ניסיון להכנה:</h4>
+<table>
+<tr><th>מבחן</th><th>שאלה</th><th>תקדים</th></tr>
+<tr><td><strong>מבחן הקרבה להשלמה</strong></td><td>כמה שלבים חסרים? ככל שחסרים פחות = ניסיון</td><td>-</td></tr>
+<tr><td><strong>מבחן הסרט האילם</strong></td><td>האם מהמעשים לבד ניתן ללמוד על כוונת הנאשם?</td><td>פס"ד סנקר, מנבר</td></tr>
+<tr><td><strong>מבחן הצעד האפקטיבי</strong></td><td>האם ההתנהגות חוליה שמובילה טבעית להשלמה?</td><td>פס"ד סריס, אלדד</td></tr>
+</table>
+</div>
+
+<div class="sub-card">
+<h4>יסוד נפשי של ניסיון:</h4>
+<ol>
+<li>היסוד הנפשי של העבירה המושלמת (הכרתי + חפצי)</li>
+<li><strong>+ כוונה להשלים את העבירה</strong> (יסוד נפשי מוגבר)</li>
+<li>ניתן להשתמש בדוקטרינות: עצימת עיניים, הלכת הצפיות</li>
+</ol>
+</div>
+
+<div class="sub-card">
+<h4>ניסיון לא צליח <span class="tag tag-section">ס' 26</span> - עדיין ניתן להרשיע!</h4>
+<table>
+<tr><th>סוג</th><th>דוגמה</th><th>תוצאה</th></tr>
+<tr><td>חוסר צליחות נסיבה</td><td>חשב קוקאין, בפועל עמילן <span class="tag tag-case">גרציאנו</span></td><td>עניש</td></tr>
+<tr><td>היעדר נסיבה</td><td>פריצה לכספת ריקה</td><td>עניש</td></tr>
+<tr><td>אמצעי בלתי הולם</td><td>כמות רעל קטנה מדי</td><td>עניש</td></tr>
+<tr><td>ניסיון אבסורדי</td><td>וודו, כישוף</td><td>לא עניש (בפועל)</td></tr>
+<tr><td>אי צליחות משפטית</td><td>הברחת מכס כשאין חובה</td><td>לא עניש</td></tr>
+</table>
+</div>
+
+<div class="sub-card">
+<h4>פטור עקב חרטה <span class="tag tag-section">ס' 28</span> - 4 תנאים מצטברים:</h4>
+<ol>
+<li>קיום תנאי ס' 25 (היה ניסיון)</li>
+<li><strong>רצון פנימי אמיתי</strong> - לא בגלל נסיבות חיצוניות <span class="tag tag-case">פס"ד מצרוואה</span></li>
+<li>מתוך חרטה (גם תועלתנית) <span class="tag tag-case">פס"ד נחושתן</span></li>
+<li>תרומה ממשית למניעת התוצאה</li>
+</ol>
+</div>
+</div>
+
+<!-- PARTIES TO CRIME -->
+<div class="card" style="border-color:var(--pink)">
+<h3>צדדים לעבירה - מי מה?</h3>
+<div class="warning">
+<strong>כלל יסוד:</strong> אחריות השותפים נגזרת מאחריות המבצע העיקרי. אם המבצע לא מורשע → גם השותפים מזוכים.
+</div>
+
+<div class="sub-card">
+<h4>מבצע בצוותא <span class="tag tag-section">ס' 29(ב)</span></h4>
+<p><strong>כולם מבצעים עיקריים. גוף אחד בעל כמה זרועות.</strong></p>
+<p><em>יסוד עובדתי:</em> ביצוע חלק מהמעשים הנדרשים</p>
+<p><em>יסוד נפשי:</em> (1) י"נ של העבירה המושלמת + (2) מודעות לפעולה בצוותא</p>
+<ul>
+<li><span class="tag tag-case">פס"ד פלונים</span> - נוכחות פיזית לא תנאי הכרחי</li>
+<li><span class="tag tag-case">פס"ד מטיאס</span> - תכנון משותף + חלוקת תפקידים = בצוותא</li>
+</ul>
+</div>
+
+<div class="sub-card">
+<h4>5 מבחנים להבחנה: מבצע בצוותא vs מסייע</h4>
+<table>
+<tr><th>#</th><th>מבחן</th><th>מבצע בצוותא</th><th>מסייע</th></tr>
+<tr><td>1</td><td>מבחן תיקון 39</td><td>מעשים חיוניים, לא הכנתיים</td><td>מעשים משניים</td></tr>
+<tr><td>2</td><td>שליטה פונקציונאלית <span class="tag tag-case">פלונים</span></td><td>"אדון העבירה"</td><td>תרומה שולית</td></tr>
+<tr><td>3</td><td>מבחן משולב (קרבה)</td><td>שותף לרעיון, הזדהות</td><td>תרומה טכנית</td></tr>
+<tr><td>4</td><td>סנקציה (חשין)</td><td>"מרגיש" כמבצע</td><td>"מרגיש" כמסייע</td></tr>
+<tr><td>5</td><td>גור אריה</td><td>לבד היה חוצה לניסיון</td><td>לבד לא מגיע לניסיון</td></tr>
+</table>
+</div>
+
+<div class="sub-card">
+<h4>משדל <span class="tag tag-section">ס' 30</span></h4>
+<p><strong>גורם לאחר לבצע עבירה ע"י שכנוע, עידוד, הפצרה</strong></p>
+<p><em>יסוד עובדתי:</em> התנהגות משדלת + קש"ס בין השידול לביצוע</p>
+<p><em>יסוד נפשי:</em> מודעות + <strong>כוונה</strong> (לא פזיזות!) להביא לביצוע</p>
+<ul>
+<li><span class="tag tag-case">פס"ד אסקין</span> - לא חייב להיות יוזם הרעיון, אבל ללא המשדל לא הייתה מתממשת העבירה</li>
+<li><span class="tag tag-case">פס"ד סוגקר</span> - שרשור שידול אפשרי</li>
+<li><span class="tag tag-warn">שידול לחטא = לא עניש (ס' 34ג)</span></li>
+<li>ניסיון שידול = חצי עונש (ס' 33)</li>
+</ul>
+</div>
+
+<div class="sub-card">
+<h4>מסייע <span class="tag tag-section">ס' 31</span></h4>
+<p><strong>תרומה עקיפה ומשנית לפעילות העבריינית</strong></p>
+<p><em>יסוד עובדתי (4 תנאים מצטברים):</em></p>
+<ol>
+<li>פוטנציאל לסייע לקיום העבירה</li>
+<li>לפני או בעת ביצוע העבירה</li>
+<li>סיוע פיזי או רוחני (גם נוכחות, גם מחדל - <span class="tag tag-case">פס"ד ויצמן</span>)</li>
+<li>ייעוד מוחשי וקונקרטי</li>
+</ol>
+<p><em>יסוד נפשי:</em> כוונה לסייע + מודעות לאפשרות ביצוע העבירה</p>
+<ul>
+<li>תנאי מקדמי: המבצע העיקרי לפחות הגיע לניסיון</li>
+<li><span class="tag tag-warn">לא ניתן להרשיע בניסיון לסיוע (הרחבה על הרחבה)</span></li>
+<li><strong>כן</strong> ניתן להרשיע בסיוע לניסיון <span class="tag tag-case">פס"ד יוסיפוב</span></li>
+</ul>
+</div>
+
+<div class="sub-card">
+<h4>מבצע באמצעות אחר <span class="tag tag-section">ס' 29(ג)</span></h4>
+<p>ניצול "כלי אנושי" - קטין, לא שפוי, נעדר שליטה, טועה, כפוי וכו'</p>
+<p><em>יסוד נפשי:</em> י"נ של העבירה + מודעות להיות האחר "אחר"</p>
+</div>
+
+<div class="sub-card" style="border-right:3px solid var(--red)">
+<h4>עבירה שונה או נוספת <span class="tag tag-section">ס' 34א</span></h4>
+<p>כשאחד השותפים חורג מהתכנית:</p>
+<table>
+<tr><th>4 תנאים (פס"ד לוי)</th></tr>
+<tr><td>1. אגב עשיית העבירה (זיקת מהות + זיקת זמן)</td></tr>
+<tr><td>2. עבירה שונה ממנה או נוספת לה</td></tr>
+<tr><td>3. בנסיבות העניין (צפיות סובייקטיבי)</td></tr>
+<tr><td>4. אדם מן היישוב יכול היה להיות מודע (צפיות אובייקטיבי)</td></tr>
+</table>
+<br>
+<table>
+<tr><th>סוג השותף</th><th>אחריות לעבירה הנוספת</th></tr>
+<tr><td>מבצע בצוותא</td><td>אדישות (דרגה אחת מתחת לכוונת המבצע)</td></tr>
+<tr><td>משדל / מסייע</td><td>רשלנות בלבד. <strong>אם אין עבירת רשלנות מקבילה → לא ניתן להרשיע</strong></td></tr>
+</table>
+</div>
+
+<div class="sub-card">
+<h4>דוקטרינת רב העבריינים</h4>
+<p>"המושך בחוטים" - יסוד נפשי רחב, יסוד עובדתי יכול להיות מינימלי</p>
+<ul>
+<li><span class="tag tag-case">פס"ד משולם</span> - לרוב נחשב מבצע בצוותא, לא חייב נוכחות</li>
+<li><span class="tag tag-case">פס"ד ברגותי</span> - מינימום: השתתפות בתכנון/הנחיות/אישור/פיקוח</li>
+<li>חלופה: חוק מאבק בארגוני פשיעה (ס' 2א) - "העומד בראש" ללא הוכחת מודעות למעשה קונקרטי</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- STEP 5: DEFENSES -->
+<!-- ============================================ -->
+<section class="step-section" id="step5">
+<div class="step-header">
+<div class="step-num" style="background:var(--step6)">5</div>
+<div class="step-title" style="color:var(--step6)">סייגים לאחריות פלילית (הגנות)</div>
+</div>
+
+<div class="card" style="border-color:var(--green)">
+<div class="highlight">
+<strong>כלל:</strong> הסייגים חלים על כל העבירות. הנאשם מציג ראשית ראיה → הנטל עובר לתביעה להוכיח שהסייג לא מתקיים.<br>
+<strong>שני סוגים:</strong> (1) פטורים - האירוע נכפה על הנאשם | (2) הצדקות - המעשה היה מוצדק
+</div>
+
+<details>
+<summary style="border-right:3px solid var(--accent2)">
+<span>היעדר שליטה <span class="tag tag-section">ס' 34ז</span></span>
+</summary>
+<div>
+<p>אין לנאשם שליטה על מעשיו ואין באפשרותו לבחור.</p>
+<ul>
+<li><span class="tag tag-case">פס"ד צ'ארלסון</span> - גידול במוח = היעדר שליטה</li>
+<li><span class="tag tag-case">פס"ד צדקה</span> - התקף אפילפטי = היעדר שליטה</li>
+<li><span class="tag tag-case">פס"ד גטאהון</span> - פוסט-טראומה רק אם השפיעה בזמן המעשה</li>
+<li><span class="tag tag-warn">ס' 34יד: אם נכנס למצב פסול מרצון → הסייג לא עומד</span></li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary style="border-right:3px solid var(--accent2)">
+<span>אי שפיות <span class="tag tag-section">ס' 34ח</span></span>
+</summary>
+<div>
+<p><strong>3 תנאים מצטברים:</strong></p>
+<ol>
+<li>מחלה נפשית מהותית</li>
+<li>חוסר יכולת הבנה של הפסול במעשים</li>
+<li>קש"ס בין המחלה לחוסר ההבנה</li>
+</ol>
+<ul>
+<li><span class="tag tag-case">פס"ד אדנני</span> - סכיזופרן שתכנן → לא עומד בתנאים</li>
+<li><span class="tag tag-case">פס"ד גארמה</span> - רקע תרבותי ≠ אי שפיות</li>
+<li><span class="tag tag-case">פס"ד אבו חמאד</span> - ספק שפיות בזמן המעשה → זיכוי</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary style="border-right:3px solid var(--accent2)">
+<span>שכרות <span class="tag tag-section">ס' 34ט</span></span>
+</summary>
+<div>
+<p>רק <strong>שכרות כפויה</strong> (לא בהתנהגות נשלטת, שלא מדעת) מהווה סייג.</p>
+<ul>
+<li><span class="tag tag-case">פס"ד ג'ון</span> - סמים נכנסו ללא רצון → זיכוי</li>
+<li><span class="tag tag-case">פס"ד יאסר</span> - נטילת כדורים מודעת → לא עומד</li>
+<li><span class="tag tag-warn">שכרות רצונית = אין סייג! (מופיע כמעט בכל מבחן)</span></li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary style="border-right:3px solid var(--green)">
+<span>הגנה עצמית <span class="tag tag-section">ס' 34י</span> <span class="tag tag-tip">נפוץ במבחנים!</span></span>
+</summary>
+<div>
+<p><strong>6 תנאים מצטברים:</strong></p>
+<table>
+<tr><th>#</th><th>תנאי</th><th>הסבר</th><th>תקדים</th></tr>
+<tr><td>1</td><td><strong>נחיצות</strong></td><td>היה נחוץ לפעול כדי להגן</td><td>פס"ד פרץ - אם ניתן לסגת</td></tr>
+<tr><td>2</td><td><strong>מיידיות</strong></td><td>בסמיכות לתקיפה, תוך כדי</td><td>-</td></tr>
+<tr><td>3</td><td><strong>להדוף תקיפה</strong></td><td>הגנה, לא תקיפה חוזרת</td><td>פס"ד פרידמן</td></tr>
+<tr><td>4</td><td><strong>שלא כדין</strong></td><td>התקיפה לא חוקית</td><td>לא מעצר חוקי</td></tr>
+<tr><td>5</td><td><strong>סכנה מוחשית</strong></td><td>סכנה ממשית</td><td>פס"ד וניצקי</td></tr>
+<tr><td>6</td><td><strong>לא נכנס בהתנהגות פסולה</strong></td><td>לא יזם/התחיל את הריב</td><td>פס"ד דבעאת</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary style="border-right:3px solid var(--green)">
+<span>הגנת בית המגורים <span class="tag tag-section">ס' 34י(1)</span></span>
+</summary>
+<div>
+<p>מקרה פרטי של הגנה עצמית. מגן גם על בית, עסק, משק חקלאי. חוקק בעקבות פרשת שי דרומי.</p>
+</div>
+</details>
+
+<details>
+<summary style="border-right:3px solid var(--green)">
+<span>צורך <span class="tag tag-section">ס' 34יא</span></span>
+</summary>
+<div>
+<p><strong>3 תנאים:</strong></p>
+<ol>
+<li>נחוץ להגנה על אינטרס מוגן (חיים, חירות, גוף, רכוש)</li>
+<li>סכנה מוחשית</li>
+<li>לא קיימת דרך סבירה אחרת</li>
+</ol>
+<ul><li><span class="tag tag-case">פס"ד דומא</span> - "פצצות מתקתקות"</li></ul>
+</div>
+</details>
+
+<details>
+<summary style="border-right:3px solid var(--green)">
+<span>כורח <span class="tag tag-section">ס' 34יב</span></span>
+</summary>
+<div>
+<p><strong>4 תנאים מצטברים:</strong></p>
+<ol>
+<li>כפייה תוך איום <strong>אמיתי</strong></li>
+<li>מיידיות</li>
+<li>האינטרס המוגן חשוב</li>
+<li>היעדר ברירה</li>
+</ol>
+<ul>
+<li><span class="tag tag-case">פס"ד בשיר</span> - ניתן היה לפנות למשטרה → לא כורח</li>
+<li><span class="tag tag-case">פס"ד חסוס</span> - נכנס למצב מרצון → לא עומד</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary style="border-right:3px solid var(--green)">
+<span>צידוק <span class="tag tag-section">ס' 34יג</span></span>
+</summary>
+<div>
+<p>מעשה מכוח תפקיד חוקי / הוראה חוקית (חיילים, שוטרים).</p>
+<p><strong>3 תנאים</strong> <span class="tag tag-case">פס"ד גולד</span>: (1) מכוח הדין (2) שקילות כוח (3) אין דרך סבירה אחרת</p>
+</div>
+</details>
+
+<details>
+<summary style="border-right:3px solid var(--cyan)">
+<span>זוטי דברים <span class="tag tag-section">ס' 34יז</span></span>
+</summary>
+<div>
+<p><strong>3 תנאים</strong> <span class="tag tag-case">פס"ד עזיזיאן</span>:</p>
+<ol>
+<li>מעשה קל ערך</li>
+<li>נסיבות ותוצאות קלות ערך</li>
+<li>האינטרס הציבורי מוגן גם ללא העמדה לדין (המכריע)</li>
+</ol>
+</div>
+</details>
+
+<details>
+<summary style="border-right:3px solid var(--cyan)">
+<span>טעות במצב משפטי <span class="tag tag-section">ס' 34יט</span></span>
+</summary>
+<div>
+<p><strong>5 תנאים</strong> <span class="tag tag-case">פס"ד בלילי</span>:</p>
+<ol>
+<li>תום לב</li>
+<li>סבירות ההסתמכות (שאלה מורכבת → צריך עו"ד)</li>
+<li>גילוי מלא של הפרטים</li>
+<li>מומחיות העו"ד</li>
+<li>חוות דעת <strong>בכתב</strong></li>
+</ol>
+<ul>
+<li><span class="tag tag-case">פס"ד הורוביץ</span> - עמד בכל הקריטריונים → זכה</li>
+<li><span class="tag tag-case">פס"ד תנובה</span> - חוו"ד בע"פ → הורשעו</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary style="border-right:3px solid var(--cyan)">
+<span>הגנה תרבותית (לא בחוק!)</span>
+</summary>
+<div>
+<p>לא קיימת בחוק העונשין. בתי המשפט לא מקבלים הגנה תרבותית בעבירות חמורות.</p>
+<ul>
+<li><span class="tag tag-case">פס"ד קימורה</span> - לא מקובלת ברצח</li>
+<li><span class="tag tag-case">פס"ד דינסר</span> - כיבוד תרבויות לא מתקיים בפלילי</li>
+</ul>
+</div>
+</details>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- STEP 6: HOMICIDE REFORM -->
+<!-- ============================================ -->
+<section class="step-section" id="step6">
+<div class="step-header">
+<div class="step-num" style="background:var(--step7)">+</div>
+<div class="step-title" style="color:var(--step7)">רפורמת עבירות ההמתה</div>
+</div>
+
+<div class="card" style="border-color:var(--red)">
+<table>
+<tr><th>עבירה</th><th>סעיף</th><th>רכיב חפצי</th><th>עונש</th></tr>
+<tr><td><strong>רצח בנסיבות מחמירות</strong></td><td>301א(א)</td><td>כוונה / אדישות + נסיבות מחמירות</td><td>מאסר עולם <strong>חובה</strong></td></tr>
+<tr><td><strong>רצח "רגיל"</strong></td><td>300(א)</td><td>כוונה / אדישות</td><td>עד מאסר עולם</td></tr>
+<tr><td><strong>רצח באחריות מופחתת</strong></td><td>301ב(א)</td><td>כוונה / אדישות + נסיבות מקלות</td><td>עד 20 שנים</td></tr>
+<tr><td><strong>המתה בקלות דעת</strong></td><td>301ג</td><td>קלות דעת</td><td>עד 12 שנים</td></tr>
+</table>
+
+<div class="sub-card">
+<h4>ייחוס אחריות בעבירה נוספת (ס' 34א) - טבלת המרה:</h4>
+<table>
+<tr><th>אצל המבצע העיקרי</th><th>מבצעים בצוותא</th><th>משדל / מסייע</th></tr>
+<tr><td>כוונה</td><td>אדישות</td><td>רשלנות (אם אין = אין הרשעה)</td></tr>
+</table>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- MASTER FLOWCHART SUMMARY -->
+<!-- ============================================ -->
+<section class="step-section" id="summary">
+<div class="step-header">
+<div class="step-num" style="background:linear-gradient(135deg,var(--accent),var(--accent2))">★</div>
+<div class="step-title" style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">תרשים הזרימה המלא - סיכום</div>
+</div>
+
+<div class="card" style="border-image:linear-gradient(var(--accent),var(--accent2)) 1">
+<div class="flow-container">
+<div class="flow-box" style="background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(139,92,246,.2));border-color:var(--accent);font-size:1.1em"><strong>שלב 0:</strong> זהה נאשמים + סווג עבירות (התנהגות/תוצאה)</div>
+<div class="flow-arrow"></div>
+<div class="flow-box" style="border-color:var(--step2)"><strong>שלב 1:</strong> יסוד עובדתי - התנהגותי ✓ נסיבתי ✓ תוצאתי (אם רלוונטי) ✓</div>
+<div class="flow-arrow"></div>
+<div class="flow-box decision"><strong>עבירת תוצאה?</strong></div>
+<div class="flow-branch">
+<div>
+<div class="flow-label yes">כן</div>
+<div class="flow-box" style="border-color:var(--step3)"><strong>שלב 2:</strong> קש"ס עובדתי (אלמלא) + קש"ס משפטי (צפיות)</div>
+</div>
+<div>
+<div class="flow-label no">לא</div>
+<div class="flow-box" style="border-color:var(--text2)">דלג →</div>
+</div>
+</div>
+<div style="margin-top:15px"></div>
+<div class="flow-arrow"></div>
+<div class="flow-box" style="border-color:var(--step4)"><strong>שלב 3:</strong> יסוד נפשי - מודעות (הכרתי) + כוונה/פזיזות (חפצי)</div>
+<div class="flow-arrow"></div>
+<div class="flow-box decision"><strong>מבצע עיקרי או צד לעבירה?</strong></div>
+<div class="flow-branch">
+<div>
+<div class="flow-label" style="color:var(--pink)">צד לעבירה</div>
+<div class="flow-box" style="border-color:var(--step5)"><strong>שלב 4:</strong> בצוותא / משדל / מסייע / באמצעות אחר</div>
+</div>
+<div>
+<div class="flow-label" style="color:var(--green)">מבצע עיקרי</div>
+<div class="flow-box" style="border-color:var(--text2)">המשך →</div>
+</div>
+</div>
+<div style="margin-top:15px"></div>
+<div class="flow-arrow"></div>
+<div class="flow-box decision"><strong>יש טענת הגנה?</strong></div>
+<div class="flow-branch">
+<div>
+<div class="flow-label yes">כן</div>
+<div class="flow-box" style="border-color:var(--step6)"><strong>שלב 5:</strong> סייגים - בדוק תנאים</div>
+</div>
+<div>
+<div class="flow-label no">לא</div>
+<div class="flow-box result-yes"><strong>מסקנה: אשם ✓</strong></div>
+</div>
+</div>
+<div style="margin-top:15px"></div>
+<div class="flow-box decision">הסייג מתקיים?</div>
+<div class="flow-branch">
+<div>
+<div class="flow-label yes">כן</div>
+<div class="flow-box result-no"><strong>פטור מאחריות</strong></div>
+</div>
+<div>
+<div class="flow-label no">לא</div>
+<div class="flow-box result-yes"><strong>מסקנה: אשם ✓</strong></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- EXAM CASES -->
+<!-- ============================================ -->
+<section class="exam-section" id="cases">
+<div class="step-header">
+<div class="step-num" style="background:linear-gradient(135deg,var(--red),var(--orange))">📝</div>
+<div class="step-title">ניתוח מבחני דוגמה לפי תרשים הזרימה</div>
+</div>
+
+<!-- EXAM 1: TASHPAG MOED A -->
+<div class="exam-card">
+<div class="exam-header" onclick="toggleExam(this)">
+<h3>תשפ"ג מועד א' - שאלה 1: אורית, עומר ויעל (ס' 225 + 231א)</h3>
+<span class="exam-toggle">▼</span>
+</div>
+<div class="exam-body">
+<div class="exam-facts">
+<h4>עובדות:</h4>
+<p>אורית (סוחרת סמים) הציעה לעומר (בעל מועדון) לקיים ערבי בינגו עם פרסים כספיים. עומר התייעץ עם שותפתו יעל שעודדה. עומר הסכים למרות ספקות לגבי חוקיות. אביב (17) הגיע לחגוג סוף בית ספר. עומר הציע לו להשתתף.</p>
+</div>
+
+<div class="exam-analysis">
+<h4>ניתוח לפי תרשים הזרימה:</h4>
+
+<div class="exam-step s1">
+<h4>שלב 0 - זיהוי:</h4>
+<p><strong>נאשמים:</strong> אורית, עומר, יעל</p>
+<p><strong>עבירות:</strong> ס' 225 (משחק אסור) - עבירת התנהגות | ס' 231א (מכירת כרטיס לקטין) - עבירת התנהגות</p>
+<p><strong>סיווג ראשוני:</strong> אורית = מבצעת עיקרית / משדלת | עומר = מבצע עיקרי / בצוותא | יעל = משדלת</p>
+</div>
+
+<div class="exam-step s2">
+<h4>שלב 1 - יסוד עובדתי (ס' 225):</h4>
+<p><strong>אורית:</strong> רכיב התנהגותי: ארגנה ערבי בינגו ✓ | רכיב נסיבתי: משחק אסור + פרסים כספיים ✓</p>
+<p><strong>עומר:</strong> רכיב התנהגותי: ניהל את הערבים במועדון שלו ✓ | רכיב נסיבתי: ✓</p>
+<p><strong>לחלופין:</strong> אורית כמשדלת (ס' 30) - שכנעה את עומר, הציעה רווחים, ניצלה את מעמדה</p>
+</div>
+
+<div class="exam-step s3">
+<h4>שלב 3 - יסוד נפשי (ס' 225):</h4>
+<p><strong>אורית:</strong> מודעות מלאה ✓ - היא יזמה והפעילה</p>
+<p><strong>עומר:</strong> דוקטרינת <strong>עצימת עיניים</strong> - חשד שלא חוקי (התייעץ עם יעל בגלל ספקות) אך נמנע מלברר → שקול למודעות</p>
+<p><strong>יעל כמשדלת:</strong> י"נ: מודעות + כוונה להביא לביצוע (עידדה את עומר כש"החלטתו טרם התגבשה" - פס"ד אסקין)</p>
+</div>
+
+<div class="exam-step s4">
+<h4>שלב 1+3 - ס' 231א (מכירת כרטיס לקטין):</h4>
+<p><strong>עומר כמבצע עיקרי:</strong> הציע לאביב (17) כרטיס ✓ | מודעות: אביב הגיע לחגוג סוף בי"ס → סביר שמודע שקטין</p>
+<p><strong>אורית ויעל:</strong> עבירה שונה/נוספת (ס' 34א) - זיקת מהות ✓ זיקת זמן ✓ צפיות ✓</p>
+<p><strong>אורית (מבצעת בצוותא):</strong> אחריות כאדישות ✓</p>
+<p><strong>יעל (משדלת):</strong> אחריות כרשלנות - אבל אין עבירת רשלנות מקבילה → <strong>לא ניתן להרשיע</strong></p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- EXAM 2: TASHPAG MOED A Q2 -->
+<div class="exam-card">
+<div class="exam-header" onclick="toggleExam(this)">
+<h3>תשפ"ג מועד א' - שאלה 2: אביב ואורית (ס' 380 - חבלה של ממש)</h3>
+<span class="exam-toggle">▼</span>
+</div>
+<div class="exam-body">
+<div class="exam-facts">
+<h4>עובדות:</h4>
+<p>אביב התחיל להכות את נתנאל בראשו. אורית (חברת נתנאל) תפסה פטיש והכתה את אביב בבטנו. אביב קרס, נתנאל איבד הכרה. אביב אושפז וניתוח בגלל קרע במעי.</p>
+</div>
+
+<div class="exam-analysis">
+<div class="exam-step s1">
+<h4>שלב 0: זיהוי</h4>
+<p><strong>ס' 380</strong> - חבלה של ממש (תוצאה) = 3 שנים. <strong>עבירת תוצאה.</strong></p>
+</div>
+
+<div class="exam-step s2">
+<h4>שלב 1 - אביב: יסוד עובדתי</h4>
+<p>התנהגותי: הכה את נתנאל בראשו ✓ | נסיבתי: ✓ | תוצאתי: חבלה של ממש (אובדן הכרה) ✓</p>
+</div>
+
+<div class="exam-step s3">
+<h4>שלב 2 - קש"ס</h4>
+<p>עובדתי: אלמלא המכות, לא היה נחבל → ✓ | משפטי: צפוי שמכות בראש יגרמו חבלה → ✓</p>
+</div>
+
+<div class="exam-step s4">
+<h4>שלב 3 - יסוד נפשי</h4>
+<p><strong>אביב:</strong> מודעות + אדישות/קלות דעת. <strong>חזקת המודעות הכללית</strong> - מכות בראש → צפוי שיפגע</p>
+<p><strong>שכרות?</strong> שתה אלכוהל → אבל שכרות רצונית → לא סייג (ס' 34ט)</p>
+</div>
+
+<div class="exam-step s5">
+<h4>אורית - אותו ניתוח:</h4>
+<p>התנהגותי: הכתה בפטיש בבטן ✓ | תוצאה: קרע במעי ✓ | קש"ס ✓ | י"נ: מודעות + אדישות ✓</p>
+</div>
+
+<div class="exam-step s6">
+<h4>שלב 5 - סייגים (אורית):</h4>
+<p><strong>הגנה עצמית (ס' 34י) - 6 תנאים:</strong></p>
+<ol>
+<li>נחיצות: הגנה על נתנאל שהוכה → ✓</li>
+<li>מיידיות: תוך כדי תקיפה → ✓</li>
+<li>להדוף תקיפה: הדפה את אביב → ✓</li>
+<li>שלא כדין: אביב תקף שלא כדין → ✓</li>
+<li>סכנה מוחשית: מכות בראש → ✓</li>
+<li>לא נכנסה בהתנהגות פסולה → ✓</li>
+</ol>
+<p><strong>+ הגנת צורך (ס' 34יא)</strong> - אפשרית גם כן</p>
+<div class="tip"><strong>מסקנה:</strong> הגנה עצמית מתקיימת → אורית פטורה (בכפוף למידתיות - פטיש בבטן)</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- EXAM 3: TASHPAG MOED B Q1 -->
+<div class="exam-card">
+<div class="exam-header" onclick="toggleExam(this)">
+<h3>תשפ"ג מועד ב' - שאלה 1: ג'ארד וסנבי - הצתה + רצח (ס' 448א + 301א)</h3>
+<span class="exam-toggle">▼</span>
+</div>
+<div class="exam-body">
+<div class="exam-facts">
+<h4>עובדות:</h4>
+<p>ג'ארד (בעל מסעדה) תכנן לשרוף מתכון סודי של מתחרה. סנבי (חברתו) עודדה ונתנה מסכת סקי. שתו יין וג'ין. ב-1:00 בלילה ג'ארד הצית את המתכון במשרד. השריפה התפשטה. קאל (עובד) נשרף ואושפז על מכונת הנשמה. חודשיים אח"כ הפסקת חשמל גרמה לעצירת המכונה וקאל נפטר.</p>
+</div>
+
+<div class="exam-analysis">
+<div class="exam-step s1">
+<h4>שלב 0: זיהוי</h4>
+<p><strong>ס' 448(א)</strong> - הצתה = עבירת תוצאה | <strong>ס' 301א(א)(9)</strong> - רצח בנסיבות מחמירות = עבירת תוצאה</p>
+<p>ג'ארד = מבצע עיקרי | סנבי = צד לעבירה (מסייעת?)</p>
+</div>
+
+<div class="exam-step s2">
+<h4>שלב 1+2 - הצתה (ג'ארד):</h4>
+<p>התנהגותי: הצית אש ✓ | נסיבתי: רכוש שאינו שלו ✓ | תוצאה: רכוש נשרף ✓</p>
+<p>קש"ס: אלמלא ✓ | צפיות: אש מתפשטת = צפוי ✓</p>
+<p>י"נ: "במזיד" = מודעות (ס' 90א). תכנן מראש, בחר שעה → כוונה ✓</p>
+<p><strong>שכרות?</strong> שתה אבל הפגין תכנון ושיקול → שכרות רצונית → לא סייג</p>
+</div>
+
+<div class="exam-step s3">
+<h4>שלב 1+2 - רצח מחמיר (ג'ארד):</h4>
+<p>התנהגותי: הצתה → תוצאה: מוות של קאל</p>
+<p><strong>קש"ס עובדתי:</strong> אלמלא ההצתה, קאל לא היה מאושפז ולא נפטר ✓</p>
+<p><strong>קש"ס משפטי - גורם זר מתערב (הפסקת חשמל):</strong></p>
+<ul>
+<li>פס"ד חסיין: טיפול רפואי מנתק רק אם (1) עילה יחידה ומיידית + (2) כשלים חמורים</li>
+<li>פס"ד ליכטנשטיין + לורנס: סיבוכים רפואיים לא מנתקים</li>
+<li><strong>מסקנה:</strong> הפסקת חשמל = סיבוך רפואי → לא מנתק ✓</li>
+</ul>
+<p><strong>נסיבות מחמירות (ס' 301א(9)):</strong> יצירת סכנה ממשית לחיי אדם - שנוי במחלוקת</p>
+</div>
+
+<div class="exam-step s4">
+<h4>שלב 3 - יסוד נפשי לרצח:</h4>
+<p><strong>הנקודה הקריטית:</strong> הרכיב החפצי - לפחות אדישות נדרשת</p>
+<p>אין בסיס לכוונה להרוג. אדישות היא נדירה. סביר יותר קלות דעת → <strong>לא מספיק לרצח</strong></p>
+<p>אם קלות דעת → המתה בקלות דעת (ס' 301ג) עד 12 שנים</p>
+</div>
+
+<div class="exam-step s5">
+<h4>שלב 4 - סנבי כצד לעבירה:</h4>
+<p><strong>האם משדלת?</strong> לא - ג'ארד החליט בעצמו. <strong>האם תמיכה רוחנית?</strong> תרומתה משמעותית יותר (מסכת סקי).</p>
+<p><strong>מבחנים (בצוותא vs מסייעת):</strong></p>
+<ul>
+<li>שליטה פונקציונאלית: לא הייתה "אדון העבירה" → מסייעת</li>
+<li>גור אריה: לבד לא הייתה חוצה לניסיון → מסייעת</li>
+</ul>
+<p><strong>מסייעת (ס' 31):</strong> 4 תנאים ✓ (עבירה בוצעה + מעשה מסייע + לפני + ייעוד מוחשי)</p>
+<p><strong>לגבי רצח:</strong> ס' 34א(2) → משדל/מסייע = רשלנות → <strong>המתה ברשלנות בלבד</strong></p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- EXAM 4: TASHPAG MOED B Q2 -->
+<div class="exam-card">
+<div class="exam-header" onclick="toggleExam(this)">
+<h3>תשפ"ג מועד ב' - שאלה 2: תומר ואור - יחסי מין עם קטינות (ס' 346(א)(1))</h3>
+<span class="exam-toggle">▼</span>
+</div>
+<div class="exam-body">
+<div class="exam-facts">
+<h4>עובדות:</h4>
+<p>שחקני כדוריד תומר ואור חגגו אליפות. במסיבה (כניסה 18+) הגיעו שתי צעירות עם שמות אינסטגרם "מיכל_14" ו"רוני_15". תומר העלה ספק לגבי גילן, אור אמר "אם יש ספק, אין ספק". תומר לחץ על אור באיומים. שניהם קיימו יחסי מין בהסכמה עם הקטינות.</p>
+</div>
+
+<div class="exam-analysis">
+<div class="exam-step s1">
+<h4>שלב 0: זיהוי</h4>
+<p><strong>ס' 346(א)(1)</strong> - בעילה אסורה בהסכמה של קטינה (14-16) = עבירת התנהגות</p>
+</div>
+
+<div class="exam-step s2">
+<h4>שלב 1 - יסוד עובדתי:</h4>
+<p>התנהגותי: שניהם קיימו יחסי מין ✓ | נסיבתי: הקטינות בנות 14-15, לא נשואות ✓</p>
+</div>
+
+<div class="exam-step s3">
+<h4>שלב 3 - יסוד נפשי (הנקודה המרכזית!):</h4>
+<p>מודעות למעשה: ✓ ברור</p>
+<p><strong>מודעות לנסיבה (גיל):</strong> כאן השאלה הקריטית!</p>
+<div class="highlight">
+<strong>עצימת עיניים (ס' 20(ג)(1)):</strong><br>
+<strong>חשד:</strong> שמות אינסטגרם "מיכל_14" ו"רוני_15" + תומר עצמו העלה ספק ✓<br>
+<strong>אי-בירור:</strong> לא בדקו ת.ז., לא שאלו ישירות ✓<br>
+<strong>→ חשד + אי בירור = מודעות!</strong>
+</div>
+<ul>
+<li><span class="tag tag-case">פס"ד האונס בשמרת</span> - עצימת עיניים באשר לגיל</li>
+<li><span class="tag tag-case">פס"ד טייב</span> - גם "חלל תודעתי" = עצימת עיניים</li>
+</ul>
+</div>
+
+<div class="exam-step s4">
+<h4>שלב 4 - צדדים:</h4>
+<p><strong>תומר:</strong> לחץ על אור (שידול?) - אבל גם בעצמו ביצע → <strong>מבצע בצוותא</strong> (שיקולי תיוג וגנאי)</p>
+<p><strong>אור:</strong> מבצע בצוותא - נכח, השתתף, מודעות (לפחות עצימת עיניים) ✓</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- EXAM 5: TASHPAB MOED A -->
+<div class="exam-card">
+<div class="exam-header" onclick="toggleExam(this)">
+<h3>תשפ"ב מועד א' - שאלה 3: גלית - סמים מדומים + ניסיון לא צליח (ס' 7א + 13)</h3>
+<span class="exam-toggle">▼</span>
+</div>
+<div class="exam-body">
+<div class="exam-facts">
+<h4>עובדות:</h4>
+<p>גלית מצאה מזוודה עם אבקה לבנה, התקשרה לחבר סוחר סמים כדי למכור. בביקורת בבית ספר נמצאה האבקה - שהתבררה כ<strong>לא סם</strong>.</p>
+</div>
+
+<div class="exam-analysis">
+<div class="exam-step s1">
+<h4>שלב 0: זיהוי</h4>
+<p>ס' 7(א) - החזקת סם | ס' 13 - סחר בסמים. <strong>אבל זה לא סם!</strong> → נבחן ניסיון</p>
+</div>
+
+<div class="exam-step s2">
+<h4>שלב 1 - יסוד עובדתי:</h4>
+<p>ס' 7(א): החזיקה בחומר ✓ | אבל <strong>הנסיבה לא מתקיימת</strong> - זה לא סם ✗</p>
+<p>→ <strong>עבירה לא מושלמת → בדוק ניסיון (ס' 25)</strong></p>
+</div>
+
+<div class="exam-step s3">
+<h4>שלב 4 - ניסיון:</h4>
+<p><strong>3 מבחנים:</strong></p>
+<ol>
+<li>קרבה להשלמה: החזיקה בפועל → קרוב מאוד ✓</li>
+<li>סרט אילם: מחזיקה אבקה + מתקשרת לסוחר → ברור ✓</li>
+<li>צעד אפקטיבי: חוליה מתקדמת בשרשרת ✓</li>
+</ol>
+<p><strong>ניסיון לא צליח (ס' 26):</strong> חוסר צליחות נסיבה - חשבה סם, בפועל לא → <strong>עדיין עניש!</strong></p>
+<p><span class="tag tag-case">פס"ד גרציאנו</span> - בדיוק אותו מקרה (חשב קוקאין, בפועל עמילן)</p>
+<p><strong>י"נ לניסיון:</strong> מודעות + כוונה להשלים ✓</p>
+<div class="tip"><strong>מסקנה:</strong> ניתן להרשיע ב<strong>ניסיון</strong> להחזקת סם מסוכן</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- EXAM 6: TASHPAB MOED A Q4 -->
+<div class="exam-card">
+<div class="exam-header" onclick="toggleExam(this)">
+<h3>תשפ"ב מועד א' - שאלה 4: גלית עם אוטיזם - הגנה עצמית (ס' 329א)</h3>
+<span class="exam-toggle">▼</span>
+</div>
+<div class="exam-body">
+<div class="exam-facts">
+<h4>עובדות:</h4>
+<p>אבנר נעל דלת וניסה לכפות יחסי מין על גלית (שיכור). גלית דחפה אותו וטרקה את ראשו בקיר. לגלית אוטיזם שמשפיע על הבעה רגשית.</p>
+</div>
+
+<div class="exam-analysis">
+<div class="exam-step s1">
+<h4>שלבים 1-3:</h4>
+<p>התנהגותי: דחפה + טרקה ראש בקיר ✓ | תוצאה: חבלה ✓ | קש"ס ✓</p>
+<p>י"נ: מודעות ✓ | לפחות קלות דעת ✓</p>
+</div>
+
+<div class="exam-step s6">
+<h4>שלב 5 - הגנה עצמית (ס' 34י):</h4>
+<ol>
+<li><strong>נחיצות:</strong> נעולה בחדר, אין מנוס → ✓</li>
+<li><strong>מיידיות:</strong> תוך כדי הניסיון → ✓</li>
+<li><strong>להדוף תקיפה:</strong> הדפה תקיפה מינית → ✓</li>
+<li><strong>שלא כדין:</strong> אונס = שלא כדין → ✓</li>
+<li><strong>סכנה מוחשית:</strong> תקיפה מינית = סכנה ממשית → ✓</li>
+<li><strong>לא בהתנהגות פסולה:</strong> לא יזמה → ✓</li>
+</ol>
+<div class="warning">
+<strong>אוטיזם ≠ אי שפיות / היעדר שליטה!</strong> אוטיזם משפיע רק על הבעה רגשית, לא על הבנת המעשים.
+</div>
+<div class="tip"><strong>מסקנה:</strong> 6/6 תנאים מתקיימים → הגנה עצמית → <strong>פטורה</strong></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- EXAM 7: TASHPAB MOED B Q2 -->
+<div class="exam-card">
+<div class="exam-header" onclick="toggleExam(this)">
+<h3>תשפ"ב מועד ב' - שאלה 2: אהוד, גדעון ודניאל - שוד ואונס (ס' 431 + 345)</h3>
+<span class="exam-toggle">▼</span>
+</div>
+<div class="exam-body">
+<div class="exam-facts">
+<h4>עובדות:</h4>
+<p>אהוד (17.5) הציע שוד חנוונית מבוגר. גדעון הסכים. דניאל סירב אך השאיל סכין (בתנאי שיקבל חלק). לאחר תכנון, גדעון הגיע אך אהוד חזר בו ("מסוכן מדי"). גדעון ביצע לבד, לקח כסף מיעקב ומגליה בלי הסכין. אח"כ גדעון אנס את גליה.</p>
+</div>
+
+<div class="exam-analysis">
+<div class="exam-step s1">
+<h4>שלב 0: זיהוי</h4>
+<p>ס' 431 - עושק | ס' 345 - אונס</p>
+<p>גדעון = מבצע עיקרי | אהוד = משדל | דניאל = מסייע</p>
+</div>
+
+<div class="exam-step s2">
+<h4>ס' 431 - עושק:</h4>
+<p><strong>גדעון:</strong> ניצל חולשת יעקב (זקן) + לקח כסף → כל היסודות ✓</p>
+<p><strong>אהוד כמשדל (ס' 30):</strong> יזם את הרעיון, השפיע על גדעון ✓ | לא מבצע בצוותא (לא היה נוכח, חזר בו)</p>
+<p><strong>חרטת אהוד (ס' 34)?</strong> לא עומד - לא מנע את העבירה, לא הודיע לרשויות, לא עשה הכל כדי למנוע</p>
+<p><strong>דניאל כמסייע (ס' 31):</strong> מבחנים → לא חיוני (גדעון לא השתמש בסכין), לא "אדון העבירה" → מסייע ✓</p>
+</div>
+
+<div class="exam-step s4">
+<h4>ס' 345 - אונס (עבירה שונה/נוספת):</h4>
+<p><strong>גדעון:</strong> כל היסודות מתקיימים ✓</p>
+<p><strong>אהוד ודניאל - ס' 34א:</strong></p>
+<p>ס' 34א(א)(2): משדל/מסייע → אחריות כרשלנות בלבד</p>
+<p><strong>אבל:</strong> (1) אין עבירת "אונס ברשלנות" (2) צפיות לאונס במהלך שוד - ספק</p>
+<div class="tip"><strong>מסקנה:</strong> אהוד ודניאל <strong>לא אחראים</strong> לאונס</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- EXAM 8: TASHPAB MOED B Q1 -->
+<div class="exam-card">
+<div class="exam-header" onclick="toggleExam(this)">
+<h3>תשפ"ב מועד ב' - שאלה 1: דן - קשר עם סוכן זר + עצימת עיניים (ס' 114א)</h3>
+<span class="exam-toggle">▼</span>
+</div>
+<div class="exam-body">
+<div class="exam-facts">
+<h4>עובדות:</h4>
+<p>דן (רכז שב"כ) חדר לפגישת שלום לגייס מקורות. פגש את שמואל (סוכן ארגון טרור לשעבר, טוען שהוא פעיל שלום). דורון (מפקדו) שלח SMS דחוף על "חפרפרת" בכנס. דן התעלם. בשיחה חשף שרה"מ יגיע לעצרת בלי אפוד.</p>
+</div>
+
+<div class="exam-analysis">
+<div class="exam-step s1">
+<h4>שלב 0: ס' 114(א) - קשר עם סוכן זר ביודעין ללא הסבר - 15 שנים</h4>
+<p>עבירת התנהגות.</p>
+</div>
+
+<div class="exam-step s2">
+<h4>שלב 1 - יסוד עובדתי:</h4>
+<p>התנהגותי: קיים "קשר" (שיחה) ✓ | נסיבתי: שמואל = "סוכן זר" (ס' 114(ז)) ✓</p>
+<p>"ללא הסבר סביר": דן טוען שהגיע לגייס מקורות → ייתכן שיש הסבר</p>
+</div>
+
+<div class="exam-step s3">
+<h4>שלב 3 - יסוד נפשי:</h4>
+<p>"ביודעין" = מחשבה פלילית (ס' 90א / 20(א))</p>
+<p>מודע לקשר ✓ | <strong>האם מודע שסמואל סוכן זר פעיל?</strong></p>
+<div class="highlight">
+<strong>עצימת עיניים:</strong><br>
+<strong>חשד:</strong> SMS דחוף על "חפרפרת" + עברו של שמואל + התעניינות שמואל בענייני ביטחון + דן חשדן מטבעו ✓<br>
+<strong>בירור:</strong> דן ניהל שיחה ארוכה → האם זה מהווה בירור? שנוי במחלוקת
+</div>
+<p><strong>הגנה (ס' 114(ד)):</strong> דן לא התכוון לפגוע בביטחון המדינה → אבל <strong>הלכת הצפיות</strong>: בהתחשב בניסיונו, ה-SMS, וחשיפת מידע רגיש → יכול היה לצפות</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- TRUE/FALSE SUMMARY -->
+<div class="exam-card">
+<div class="exam-header" onclick="toggleExam(this)">
+<h3>סיכום שאלות נכון/לא נכון מכל המבחנים</h3>
+<span class="exam-toggle">▼</span>
+</div>
+<div class="exam-body">
+<table>
+<tr><th>שאלה</th><th>תשובה</th><th>הסבר</th></tr>
+<tr><td>שידול לעבירת חטא (עד חודש)?</td><td style="color:var(--red)"><strong>לא עניש</strong></td><td>ס' 34ג - שידול לחטא לא עניש</td></tr>
+<tr><td>כל השותפים אחראים לרצח בכוונה שביצע אחד?</td><td style="color:var(--red)"><strong>לא נכון</strong></td><td>ס' 34א - בעבירה נוספת אין ייחוס כוונה</td></tr>
+<tr><td>שרשור שידול (שידול לשידול) = ניסיון שידול?</td><td style="color:var(--red)"><strong>לא</strong></td><td>זה שידול ממש (פס"ד סוגקר)</td></tr>
+<tr><td>לאחר הרפורמה, רצח רגיל רק בכוונה?</td><td style="color:var(--red)"><strong>לא</strong></td><td>גם באדישות, עד מאסר עולם (לא חובה)</td></tr>
+<tr><td>ניסיון לסיוע = אפשרי?</td><td style="color:var(--red)"><strong>לא</strong></td><td>הרחבה על הרחבה = לא. אבל סיוע לניסיון = כן (יוסיפוב)</td></tr>
+<tr><td>סתירת החזקה קונסטרוקטיבית = מעבר לספק סביר?</td><td style="color:var(--red)"><strong>לא</strong></td><td>מאזן הסתברויות מספיק</td></tr>
+<tr><td>סיוע במחדל = הרחבה על הרחבה = אסור?</td><td style="color:var(--red)"><strong>לא נכון</strong></td><td>פס"ד ויצמן - סיוע במחדל אפשרי</td></tr>
+<tr><td>הרפורמה מאפשרת הרשעה ברצח עם מאסר עולם גם ללא כוונה (באדישות)?</td><td style="color:var(--green)"><strong>נכון</strong></td><td>זה השינוי המרכזי של הרפורמה</td></tr>
+</table>
+</div>
+</div>
+
+</section>
+
+<!-- QUICK REFERENCE -->
+<section class="step-section" id="quickref">
+<div class="step-header">
+<div class="step-num" style="background:linear-gradient(135deg,var(--cyan),var(--green))">⚡</div>
+<div class="step-title">מדריך מהיר למבחן</div>
+</div>
+
+<div class="card" style="border-image:linear-gradient(var(--cyan),var(--green)) 1">
+<div class="sub-card">
+<h4>3 הדוקטרינות שחוזרות בכל מבחן:</h4>
+<table>
+<tr><th>דוקטרינה</th><th>מתי להשתמש</th><th>נוסחה</th></tr>
+<tr><td><strong>עצימת עיניים</strong></td><td>הנאשם "לא ידע" אבל היו סימנים</td><td>חשד + אי בירור = מודעות</td></tr>
+<tr><td><strong>חזקת המודעות</strong></td><td>עבירת תוצאה, תוצאה "טבעית"</td><td>מוחזק כמודע לתוצאות טבעיות</td></tr>
+<tr><td><strong>הלכת הצפיות</strong></td><td>הסעיף דורש כוונה, אין כוונה ישירה</td><td>קרוב לוודאי = כוונה</td></tr>
+</table>
+</div>
+
+<div class="sub-card">
+<h4>מלכודות נפוצות במבחן:</h4>
+<ul>
+<li><span class="tag tag-warn">שכרות רצונית</span> = תמיד לא סייג!</li>
+<li><span class="tag tag-warn">שידול לחטא</span> = לא עניש (ס' 34ג)</li>
+<li><span class="tag tag-warn">ניסיון לסיוע</span> = לא עניש (הרחבה על הרחבה)</li>
+<li><span class="tag tag-warn">משדל/מסייע + עבירה נוספת</span> = רשלנות. אין עבירת רשלנות מקבילה? → לא מרשיעים</li>
+<li><span class="tag tag-warn">אוטיזם / רקע תרבותי</span> ≠ אי שפיות</li>
+<li><span class="tag tag-warn">חרטה</span> = רצון פנימי, לא קושי חיצוני + צריך למנוע בפועל</li>
+</ul>
+</div>
+
+<div class="sub-card">
+<h4>סדר כתיבה מומלץ בבחינה (לכל נאשם × כל עבירה):</h4>
+<ol>
+<li>הצג את הסעיף וסווג (התנהגות/תוצאה)</li>
+<li>יסוד עובדתי: התנהגותי → נסיבתי → תוצאתי</li>
+<li>קש"ס (אם תוצאה): עובדתי (אלמלא) → משפטי (צפיות)</li>
+<li>יסוד נפשי: הכרתי (מודעות + דוקטרינות) → חפצי (כוונה/פזיזות)</li>
+<li>צורה נגזרת (אם רלוונטי): ניסיון / צדדים / עבירה נוספת</li>
+<li>סייגים (אם רלוונטי): פרט כל תנאי</li>
+<li><strong>מסקנה!</strong></li>
+</ol>
+</div>
+</div>
+</section>
+
+<footer style="text-align:center;padding:30px;color:var(--text2);font-size:.9em;border-top:1px solid var(--border);margin-top:40px">
+דיני עונשין | ד"ר שי פרבר | מכללת שערי משפט | 2026<br>
+<span style="font-size:.8em">נוצר אוטומטית מחומרי הקורס</span>
+</footer>
+
+</div>
+
+<script>
+function toggleExam(header){
+const body=header.nextElementSibling;
+const toggle=header.querySelector('.exam-toggle');
+body.classList.toggle('open');
+toggle.classList.toggle('open');
+}
+// Open all on print
+window.addEventListener('beforeprint',()=>{
+document.querySelectorAll('.exam-body').forEach(b=>b.classList.add('open'));
+document.querySelectorAll('details').forEach(d=>d.open=true);
+});
+</script>
+</body>
+</html>
