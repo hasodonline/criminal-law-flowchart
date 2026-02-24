@@ -287,9 +287,18 @@ flowchart TD
   J -->|"מחשבה פלילית"| K["מודעות + כוונה/פזיזות"]
   J -->|"רשלנות"| L["אדם מן היישוב"]
   J -->|"אח. קפידה"| M["אין צורך בי.נ"]
-  K --> YES["מסקנה"]
-  L --> YES
-  M --> YES
+  K --> N["4 — צדדים לעבירה"]
+  L --> N
+  M --> N
+  N --> O{"סוג שותפות?"}
+  O -->|"בצוותא"| P["מבצע בצוותא ס 29ב"]
+  O -->|"באמצעות"| Q["מבצע באמצעות ס 29ג"]
+  O -->|"משדל"| R["משדל ס 30"]
+  O -->|"מסייע"| S["מסייע ס 31"]
+  P --> YES["מסקנה"]
+  Q --> YES
+  R --> YES
+  S --> YES
 
   style A fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
   style C fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
@@ -300,6 +309,11 @@ flowchart TD
   style K fill:#fef3c7,stroke:#d97706,color:#78350f
   style L fill:#e0f2fe,stroke:#0891b2,color:#134e4a
   style M fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+  style N fill:#fff1f2,stroke:#e11d48,color:#881337
+  style P fill:#fce7f3,stroke:#db2777,color:#831843
+  style Q fill:#fce7f3,stroke:#db2777,color:#831843
+  style R fill:#fce7f3,stroke:#db2777,color:#831843
+  style S fill:#fce7f3,stroke:#db2777,color:#831843
   style YES fill:#d1fae5,stroke:#059669,color:#064e3b
   style X1 fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
   style X2 fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
@@ -500,6 +514,241 @@ flowchart TD
 </section>
 
 
+<!-- ======== STEP 4 — PARTIES ======== -->
+<section class="section" id="step4">
+  <div class="section-header">
+    <div class="section-num rose">4</div>
+    <div class="section-title">צדדים לעבירה <span class="t t-s">ס' 29-34ד</span></div>
+  </div>
+
+  <div class="chart">
+    <pre class="mermaid">
+flowchart TD
+  A{"מי ביצע?"}
+  B["מבצע יחיד ס 29א"]
+  C["מבצע בצוותא ס 29ב"]
+  D["מבצע באמצעות ס 29ג"]
+  E["משדל ס 30"]
+  F["מסייע ס 31"]
+
+  A -->|"לבד"| B
+  A -->|"יחד עם אחרים"| C
+  A -->|"דרך כלי"| D
+  A -->|"הניע אחר"| E
+  A -->|"סייע לאחר"| F
+
+  B --> G["עונש מלא"]
+  C --> G
+  D --> G
+  E --> G
+  F --> H["מחצית העונש"]
+
+  style A fill:#fce7f3,stroke:#e11d48,color:#831843
+  style C fill:#fef3c7,stroke:#d97706,color:#78350f
+  style D fill:#e0f2fe,stroke:#0891b2,color:#134e4a
+  style E fill:#ede9fe,stroke:#7c3aed,color:#3b0764
+  style F fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
+  style G fill:#d1fae5,stroke:#059669,color:#064e3b
+  style H fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+    </pre>
+  </div>
+
+  <!-- מבצע בצוותא -->
+  <div class="card card-amber">
+    <h3>מבצע בצוותא <span class="t t-s">ס' 29(ב)</span> <span class="t t-w">עונש מלא</span></h3>
+    <div class="info"><strong>הגדרה:</strong> המשתתפים בביצוע עבירה תוך עשיית מעשים לביצועה — כולם מבצעים עיקריים. "גוף אחד בעל כמה זרועות". כל אחד = "אדון הפעילות העבריינית".</div>
+
+    <div class="sub">
+      <h4>יסוד עובדתי</h4>
+      <p>ביצוע <strong>חלק</strong> מהמעשים הנדרשים להשלמת העבירה. <strong>אין צורך שכל אחד יבצע את כל היסודות</strong>.</p>
+    </div>
+
+    <div class="sub">
+      <h4>יסוד נפשי</h4>
+      <ol>
+        <li>הי"נ של העבירה המושלמת (הכרתי + חפצי)</li>
+        <li><strong>מודעות לפעולה בצוותא:</strong> (1) מודעות לחלקך (2) מודעות לחלק האחרים (3) מודעות למזימה בכללותה</li>
+      </ol>
+    </div>
+
+    <div class="sub">
+      <h4>נוכחות פיזית</h4>
+      <ul>
+        <li><strong>אינה תנאי הכרחי</strong> — אפשר לפעול "בשלט רחוק" <span class="t t-c">משולם</span> <span class="t t-c">פלונים</span></li>
+        <li><strong>אינה תנאי מספיק</strong> — נוכחות במקום עשויה להוות סיוע בלבד</li>
+        <li>גם נוכחות וירטואלית (טלפונית) מספיקה <span class="t t-c">מארי פיזם</span></li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <h4>פסיקה</h4>
+      <ul>
+        <li><span class="t t-c">סורג'ון</span> מסתכלים על המעשה בכללותו; לא משנה מה התפקיד המדויק</li>
+        <li><span class="t t-c">מטיאס</span> גם נוכחות מאיימת + תכנון משותף = בצוותא</li>
+        <li><span class="t t-c">לוי</span> כל עבירה נוספת תיחשב גם כלפי השותף</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- מבצע באמצעות -->
+  <div class="card card-teal">
+    <h3>מבצע באמצעות אחר <span class="t t-s">ס' 29(ג)</span> <span class="t t-w">עונש מלא</span></h3>
+    <div class="info"><strong>הגדרה:</strong> אדם שתרם לעשיית המעשה ע"י אדם אחר שהפך ל<strong>כלי בידיו</strong>. ניצול עליונות — בשליטה או בידע.</div>
+
+    <div class="sub">
+      <h4>המצבים (רשימה פתוחה — "כגון")</h4>
+      <ol>
+        <li>קטינות או אי שפיות הדעת</li>
+        <li>היעדר שליטה</li>
+        <li>ללא מחשבה פלילית</li>
+        <li>טעות במצב דברים</li>
+        <li>כורח או צידוק</li>
+      </ol>
+    </div>
+
+    <div class="sub">
+      <h4>י"נ</h4>
+      <p>(1) הי"נ של העבירה + (2) מודעות (או עצימת עיניים) לנסיבת היות האחר "כלי"</p>
+    </div>
+
+    <div class="warn"><strong>ההבדל ממשדל:</strong> באמצעות אחר = האחר הוא <strong>כלי</strong> (חל עליו סייג/אין י"נ). בשידול = האחר <strong>אוטונומי</strong> (העבירה מתקיימת גם אצלו).</div>
+  </div>
+
+  <!-- משדל -->
+  <div class="card card-purple">
+    <h3>משדל <span class="t t-s">ס' 30</span> <span class="t t-w">עונש מלא (ס' 34ד)</span></h3>
+    <div class="info"><strong>הגדרה:</strong> "המביא אחר לידי עשיית עבירה בשכנוע, בעידוד, בדרישה, בהפצרה או <strong>בכל דרך שיש בה משום הפעלת לחץ</strong>" — רשימה פתוחה. המשדל גורם לשינוי תודעה; "הוליד לא רק עבירה — הוליד גם עבריין".</div>
+
+    <div class="sub">
+      <h4>יסוד עובדתי</h4>
+      <ol>
+        <li><strong>התנהגותי:</strong> התנהגות משדלת (שכנוע, עידוד, דרישה, הפצרה...)</li>
+        <li><strong>נסיבתי:</strong> קיומו של משודל אחראי בפלילים</li>
+        <li><strong>תוצאתי:</strong> ביצוע עבירה ע"י המשודל</li>
+        <li><strong>קש"ס</strong> בין השידול לביצוע</li>
+      </ol>
+    </div>
+
+    <div class="sub">
+      <h4>יסוד נפשי <span class="t t-c">אסקין</span></h4>
+      <ol>
+        <li><strong>מודעות:</strong> (א) לטיב ההתנהגות המשדלת (ב) לקיומו של אחר הזקוק להנעה מנטאלית</li>
+        <li><strong>כוונה</strong> (לא פזיזות!) להביא את המשודל לביצוע — שידול ממהותו הוא תכליתי</li>
+      </ol>
+    </div>
+
+    <div class="sub">
+      <h4>חריגים</h4>
+      <ul>
+        <li><strong>שידול לעבירת חטא</strong> = לא עניש <span class="t t-s">ס' 34ג</span></li>
+        <li><strong>ניסיון לשידול</strong> = מחצית העונש <span class="t t-s">ס' 33</span></li>
+        <li><strong>שרשור שידול</strong> (א' משדל את ב' שמשדל את ג') = שידול ממש <span class="t t-c">סוגקר</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- מסייע -->
+  <div class="card card-blue">
+    <h3>מסייע <span class="t t-s">ס' 31</span> <span class="t t-d">מחצית העונש</span></h3>
+    <div class="info"><strong>הגדרה:</strong> תרומה <strong>עקיפה</strong> (לא נטל חלק בביצוע) <strong>ומשנית</strong> (לא מהמתכננים). תנאי: המבצע העיקרי לכל הפחות הגיע <strong>לשלב הניסיון</strong>.</div>
+
+    <div class="sub">
+      <h4>יסוד עובדתי — 4 תנאים מצטברים</h4>
+      <ol>
+        <li>למעשה <strong>פוטנציאל לסייע</strong> (גם אם בפועל לא תרם תרומה אפקטיבית) <span class="t t-c">פוליאקוב</span></li>
+        <li>המעשה נעשה <strong>לפני או בעת</strong> ביצוע העבירה (לא אחרי)</li>
+        <li>סיוע <strong>פיזי או רוחני</strong> (גם עצם נוכחות)</li>
+        <li><strong>ייעוד מוחשי וקונקרטי</strong> — המבצע לא חייב להיות מודע לעזרה <span class="t t-c">יוסיפוב</span></li>
+      </ol>
+    </div>
+
+    <div class="sub">
+      <h4>יסוד נפשי <span class="t t-c">יוסיפוב</span></h4>
+      <ol>
+        <li><strong>כוונה לסייע</strong></li>
+        <li><strong>מודעות</strong> לאפשרות ביצוע העבירה ולפוטנציאל התרומה</li>
+      </ol>
+      <p>ניתן להשתמש ב<strong>עצימת עיניים</strong> כתחליף למודעות וב<strong>הלכת הצפיות</strong> כתחליף לכוונה <span class="t t-s">ס' 34כד</span></p>
+    </div>
+
+    <div class="sub">
+      <h4>סיוע במחדל <span class="t t-c">ויצמן</span> <span class="t t-c">נקר</span></h4>
+      <p>אפשרי! אי מניעת פשע יכול להוות סיוע. <strong>ויצמן:</strong> אימץ גישה רחבה. <strong>נקר:</strong> הנאשמת שלא ברחה בעת דפיקה בדלת הורשעה בסיוע לרצח.</p>
+    </div>
+
+    <div class="warn"><strong>ניסיון לסיוע = לא עניש!</strong> (הרחבה על הרחבה). אבל <strong>סיוע לניסיון = כן עניש</strong>.</div>
+  </div>
+
+  <!-- הבחנה בין מבצע בצוותא למסייע -->
+  <div class="card card-rose">
+    <h3>5 מבחנים — מבצע בצוותא או מסייע?</h3>
+    <div class="info">"המסייע והמבצע הם ככלב וכזאב לפני עלות השחר" (חשין)</div>
+    <table>
+      <tr><th>#</th><th>מבחן</th><th>תוכן</th></tr>
+      <tr><td>1</td><td><strong>תיקון 39</strong></td><td>מעשים <strong>חיוניים</strong> (בלעדיהם לא הייתה מתבצעת) + <strong>לא הכנתיים</strong> = בצוותא</td></tr>
+      <tr><td>2</td><td><strong>שליטה פונקציונאלית</strong> <span class="t t-c">פלונים</span></td><td>"אדון העשייה" עם <strong>שליטה על הנעשה</strong> = בצוותא</td></tr>
+      <tr><td>3</td><td><strong>מבחן משולב/קרבה</strong></td><td>דגש על ההיבט הנפשי: <strong>רצון והזדהות</strong> עם העבירה = בצוותא</td></tr>
+      <tr><td>4</td><td><strong>סנקציה פלילית</strong> (חשין)</td><td>מה הסנקציה הראויה? <strong>אינטואיציה שיפוטית</strong>. ביקורת: פגיעה בחוקיות</td></tr>
+      <tr><td>5</td><td><strong>גור אריה</strong></td><td>אם פעל <strong>לבד</strong> — האם חוצה לניסיון? כן = בצוותא. לא = מסייע</td></tr>
+    </table>
+    <div class="tip"><strong>בפרקטיקה:</strong> ברוב המקרים ביהמ"ש יכריע — מבצע בצוותא (לא מסייע)</div>
+  </div>
+
+  <!-- עבירה שונה/נוספת -->
+  <div class="card card-red">
+    <h3>עבירה שונה או נוספת <span class="t t-s">ס' 34א</span></h3>
+    <div class="info"><strong>מתי חל?</strong> כשאחד מהשותפים מבצע עבירה <strong>שלא תוכננה מראש</strong> והשותפים <strong>לא צפו</strong> אותה אך <strong>אדם סביר יכול היה לצפות</strong>.</div>
+
+    <div class="sub">
+      <h4>4 תנאים <span class="t t-c">לוי</span></h4>
+      <ol>
+        <li><strong>"אגב עשיית העבירה"</strong> — זיקת מהות + זיקת זמן</li>
+        <li><strong>"עבירה שונה/נוספת"</strong> — לא העבירה המקורית</li>
+        <li><strong>מבחן צפיות סובייקטיבי</strong> — בנסיבות העניין</li>
+        <li><strong>מבחן צפיות אובייקטיבי</strong> — אדם מן היישוב יכול היה להיות מודע</li>
+      </ol>
+    </div>
+
+    <table>
+      <tr><th>אצל המבצע העיקרי</th><th>מבצעים בצוותא (ס' 34א(1))</th><th>משדל/מסייע (ס' 34א(2))</th></tr>
+      <tr><td>כוונה</td><td><strong style="color:#d97706">אדישות</strong></td><td><strong style="color:#dc2626">רשלנות</strong> (אם אין עבירה דומה ברשלנות → לא מרשיעים!)</td></tr>
+    </table>
+
+    <div class="sub">
+      <h4>דוגמאות</h4>
+      <ul>
+        <li>שידול לשוד, השודד ירה בשומר → משדל מורשע ב<strong>גרימת מוות ברשלנות</strong> (לא רצח)</li>
+        <li>שידול לשוד, השודד אנס → <strong>אין "אונס ברשלנות"</strong> → משדל מורשע בשוד בלבד</li>
+      </ul>
+    </div>
+
+    <div class="warn"><strong>מדוע חשוב אם בצוותא או משדל?</strong> (1) תיוג וגינוי (2) עונש בפועל (3) עבירה נוספת: בצוותא = אדישות, משדל = רשלנות בלבד</div>
+  </div>
+
+  <!-- רב עבריינים -->
+  <div class="card card-gray">
+    <h3>רב עבריינים — "המושך בחוטים"</h3>
+    <p>י"נ גדול מאוד, י"ע כמעט לא מתקיים. <strong>הגישה בפסיקה:</strong> מבצע בצוותא <span class="t t-c">משולם</span> <span class="t t-c">ברגותי</span></p>
+    <p><strong>ברגותי:</strong> מינימום נדרש — השתתפות בתכנון / קשירת קשר / מתן הנחיות / פיקוח / העלאת רעיון + סיוע</p>
+    <p><strong>סדר עדיפות תביעה:</strong> מבצע בצוותא → משדל/באמצעות → מנהל ארגון פשיעה (חוק 2003)</p>
+  </div>
+
+  <!-- חרטה -->
+  <div class="card card-green">
+    <h3>פטור עקב חרטה</h3>
+    <div class="sub">
+      <h4>חרטת משדל/מסייע <span class="t t-s">ס' 34</span></h4>
+      <p><strong>חלופות</strong> (לא מצטברים):</p>
+      <ol>
+        <li>מניעת העבירה/השלמתה באופן ממשי</li>
+        <li>הודעה לרשויות לשם מניעה</li>
+        <li>עשיית כל שביכולו למניעה (גם אם לא הצליח!)</li>
+      </ol>
+    </div>
+    <div class="warn"><strong>שים לב:</strong> חרטה = רצון פנימי + מניעה בפועל. קושי חיצוני = לא חרטה <span class="t t-c">מצראווה</span>. חרטה תועלתנית מספיקה <span class="t t-c">נחושתן</span></div>
+  </div>
+</section>
+
 <!-- ======== EXAM CASES ======== -->
 <section class="section" id="cases">
   <div class="section-header">
@@ -515,13 +764,16 @@ flowchart TD
         <p>אורית (סוחרת סמים) הציעה לעומר (בעל מועדון) ערבי בינגו עם פרסים כספיים. עומר התייעץ עם שותפתו יעל שעודדה. עומר הסכים למרות ספקות. אביב (17) הגיע לחגוג סוף בי"ס, עומר הציע לו כרטיס.</p>
       </div>
       <div class="sb s1"><h4>שלב 0 — זיהוי</h4>
-        <p>נאשמים: אורית, עומר, יעל | ס' 225 (משחק אסור) = התנהגות | ס' 231א (מכירה לקטין) = התנהגות</p>
+        <p>נאשמים: אורית, עומר, יעל | ס' 225 (משחק אסור) = התנהגות | ס' 231א (מכירה לקטין) = התנהגות | אורית: מבצעת/משדלת | עומר: מבצע/בצוותא | יעל: משדלת</p>
       </div>
       <div class="sb s2"><h4>שלב 1 — י"ע (ס' 225)</h4>
         <p>אורית: ארגנה ✓ + פרסים כספיים ✓ | עומר: ניהל במועדון ✓</p>
       </div>
       <div class="sb s3"><h4>שלב 3 — י"נ</h4>
-        <p>אורית: מודעות מלאה ✓ | <strong>עומר: עצימת עיניים</strong> — חשד (התייעץ בגלל ספקות) + לא בירר → מודעות</p>
+        <p>אורית: מודעות מלאה ✓ | <strong>עומר: עצימת עיניים</strong> — חשד (התייעץ בגלל ספקות) + לא בירר → מודעות | יעל כמשדלת: עודדה כשההחלטה טרם התגבשה <span class="t t-c">אסקין</span></p>
+      </div>
+      <div class="sb s5"><h4>שלב 4 — ס' 231א — עבירה נוספת (ס' 34א)</h4>
+        <p>עומר: הציע לאביב (17) כרטיס ✓ | מודע שקטין (חגיגת סוף בי"ס) | אורית (בצוותא) → אדישות ✓ | <strong>יעל (משדלת) → רשלנות, אבל אין עבירת רשלנות מקבילה → לא ניתן להרשיע</strong></p>
       </div>
     </div>
   </div>
@@ -550,7 +802,7 @@ flowchart TD
       <div class="exam-facts"><h4>עובדות</h4>
         <p>ג'ארד הצית מתכון סודי במסעדת מתחרה. סנבי עודדה ונתנה מסכת סקי. שתו אלכוהול. השריפה התפשטה, קאל (עובד) נשרף ואושפז. חודשיים אח"כ הפסקת חשמל → מכונת הנשמה נעצרה → קאל נפטר.</p>
       </div>
-      <div class="sb s1"><h4>שלב 0</h4><p>ס' 448(א) הצתה = תוצאה | ס' 301א רצח מחמיר = תוצאה</p></div>
+      <div class="sb s1"><h4>שלב 0</h4><p>ס' 448(א) הצתה = תוצאה | ס' 301א רצח מחמיר = תוצאה | ג'ארד = מבצע | סנבי = מסייעת</p></div>
       <div class="sb s2"><h4>הצתה — ג'ארד</h4>
         <p>י"ע ✓ | קש"ס ✓ | "במזיד" = מודעות, תכנן מראש = כוונה ✓</p>
       </div>
@@ -558,6 +810,10 @@ flowchart TD
         <p><strong>עובדתי:</strong> אלמלא הצתה → לא אושפז → לא נפטר ✓</p>
         <p><strong>גורם זר (הפסקת חשמל):</strong> <span class="t t-c">חסיין</span> — טיפול מנתק רק אם עילה יחידה+מיידית + כשלים חמורים. הפסקת חשמל = סיבוך → <strong>לא מנתק</strong> ✓</p>
         <p><strong>י"נ לרצח:</strong> אין כוונה להרוג. אדישות נדירה. סביר: קלות דעת → <strong>המתה בקלות דעת (ס' 301ג) עד 12 שנים</strong></p>
+      </div>
+      <div class="sb s5"><h4>סנבי — מסייעת</h4>
+        <p>מבחנים: לא "אדון העבירה", לבד לא חוצה לניסיון → <strong>מסייעת</strong> (ס' 31, 4 תנאים ✓)</p>
+        <p>לגבי רצח: ס' 34א(2) → משדל/מסייע = רשלנות → <strong>המתה ברשלנות בלבד</strong></p>
       </div>
     </div>
   </div>
@@ -573,12 +829,29 @@ flowchart TD
       <div class="sb s3"><h4>שלב 3 — י"נ (הנקודה המרכזית)</h4>
         <p><strong>עצימת עיניים:</strong> שמות אינסטגרם "14" ו"15" + תומר עצמו העלה ספק → <strong>חשד ✓</strong> | לא בדקו ת.ז. → <strong>אי בירור ✓</strong> → מודעות!</p>
         <p><span class="t t-c">האונס בשמרת</span> <span class="t t-c">טייב</span></p>
-        <p>תומר + אור: ביצעו בעצמם ✓</p>
+        <p>תומר: לחץ (שידול?) אבל ביצע בעצמו → <strong>מבצע בצוותא</strong> (שיקולי תיוג) | אור: מבצע בצוותא ✓</p>
       </div>
     </div>
   </div>
 
   <!-- CASE 5 -->
+  <div class="exam">
+    <div class="exam-head">תשפ"ב מועד ב' — אהוד, גדעון ודניאל — שוד + אונס (ס' 431 + 345)</div>
+    <div class="exam-body">
+      <div class="exam-facts"><h4>עובדות</h4>
+        <p>אהוד הציע שוד. דניאל סירב אך השאיל סכין. אהוד חזר בו. גדעון ביצע לבד — לקח כסף, ואז אנס את גליה.</p>
+      </div>
+      <div class="sb s1"><h4>שלב 0</h4><p>ס' 431 עושק | ס' 345 אונס | גדעון = מבצע | אהוד = משדל | דניאל = מסייע</p></div>
+      <div class="sb s4"><h4>עושק (ס' 431)</h4>
+        <p>גדעון: כל היסודות ✓ | אהוד משדל: יזם, השפיע ✓ — חרטה (ס' 34)? לא: לא מנע, לא הודיע | דניאל מסייע: סכין ✓</p>
+      </div>
+      <div class="sb s5"><h4>אונס — עבירה נוספת (ס' 34א)</h4>
+        <p>גדעון: ✓ | אהוד+דניאל (משדל+מסייע) → רשלנות. <strong>אין "אונס ברשלנות" + צפיות ספק → לא אחראים</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 6 -->
   <div class="exam">
     <div class="exam-head">תשפ"ב מועד ב' — דן (שב"כ) — קשר עם סוכן זר (ס' 114א)</div>
     <div class="exam-body">
@@ -598,8 +871,13 @@ flowchart TD
     <h3>סיכום נכון/לא נכון מכל המבחנים</h3>
     <table>
       <tr><th>שאלה</th><th></th><th>הסבר</th></tr>
-      <tr><td>רצח רגיל רק בכוונה (לאחר הרפורמה)?</td><td><strong style="color:#dc2626">✗</strong></td><td>גם באדישות</td></tr>
+      <tr><td>שידול לעבירת חטא?</td><td><strong style="color:#dc2626">✗</strong></td><td>ס' 34ג — לא עניש</td></tr>
+      <tr><td>כל השותפים אחראים לרצח בכוונה שביצע אחד?</td><td><strong style="color:#dc2626">✗</strong></td><td>ס' 34א — אין ייחוס כוונה. בצוותא=אדישות, משדל/מסייע=רשלנות</td></tr>
+      <tr><td>שרשור שידול = ניסיון שידול?</td><td><strong style="color:#dc2626">✗</strong></td><td>זה שידול ממש <span class="t t-c">סוגקר</span></td></tr>
+      <tr><td>ניסיון לסיוע = אפשרי?</td><td><strong style="color:#dc2626">✗</strong></td><td>הרחבה על הרחבה. סיוע לניסיון = כן</td></tr>
+      <tr><td>סיוע במחדל = אסור?</td><td><strong style="color:#dc2626">✗</strong></td><td><span class="t t-c">ויצמן</span> — אפשרי</td></tr>
       <tr><td>סתירת החזקה קונסטרוקטיבית = מעבר לספק סביר?</td><td><strong style="color:#dc2626">✗</strong></td><td>מאזן הסתברויות מספיק</td></tr>
+      <tr><td>רצח רגיל רק בכוונה (לאחר הרפורמה)?</td><td><strong style="color:#dc2626">✗</strong></td><td>גם באדישות</td></tr>
       <tr><td>הרפורמה: הרשעה ברצח באדישות + מאסר עולם?</td><td><strong style="color:#059669">✓</strong></td><td>השינוי המרכזי של הרפורמה</td></tr>
     </table>
   </div>
@@ -630,7 +908,10 @@ flowchart TD
       <li><strong>גולגולת דקיקה</strong> ≠ גולגולת דקה (דקיקה = לא אחראי, דקה = אחראי)</li>
       <li><strong>עצימת עיניים</strong> = דורש חשד + אי בירור (לא מספיק אחד מהם)</li>
       <li><strong>הלכת הצפיות</strong> = תחליף לכוונה בלבד, לא לפזיזות</li>
-      <li><strong>רשלנות</strong> = רק כשהחוק מציין במפורש</li>
+      <li><strong>שידול לחטא</strong> = לא עניש (ס' 34ג)</li>
+      <li><strong>ניסיון לסיוע</strong> = לא עניש (הרחבה על הרחבה)</li>
+      <li><strong>משדל/מסייע + עבירה נוספת</strong> = רשלנות. אין רשלנות מקבילה? → אין הרשעה</li>
+      <li><strong>חרטה</strong> = רצון פנימי + מניעה בפועל (לא קושי חיצוני)</li>
     </ul>
   </div>
 
@@ -641,6 +922,7 @@ flowchart TD
       <li>יסוד עובדתי: התנהגותי → נסיבתי → תוצאתי</li>
       <li>קש"ס (אם תוצאה): עובדתי (אלמלא) → משפטי (צפיות)</li>
       <li>יסוד נפשי: הכרתי (מודעות + דוקטרינות) → חפצי (כוונה/פזיזות)</li>
+      <li>צדדים לעבירה (אם רלוונטי): בצוותא / משדל / מסייע / עבירה נוספת</li>
       <li><strong>מסקנה!</strong></li>
     </ol>
   </div>
