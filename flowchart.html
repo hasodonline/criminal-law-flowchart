@@ -431,29 +431,49 @@ flowchart TD
     <pre class="mermaid">
 flowchart TD
   A{"סוג העבירה?"}
-  B["מחשבה פלילית ס 20 — ברירת מחדל + שותקות"]
+  B["מחשבה פלילית ס 20"]
   C["רשלנות ס 21 — רק כשהחוק מציין"]
   D["אחריות קפידה ס 22 — אין צורך בי.נ."]
-  E["דוקטרינות להוכחה:"]
-  F["עצימת עיניים — חשד + אי בירור = מודעות"]
-  G["חזקת המודעות — מודע לתוצאות טבעיות"]
-  H["הלכת הצפיות — קרוב לוודאי = כוונה"]
 
-  A -->|"מחשבה פלילית"| B
+  A -->|"מח.פ — ברירת מחדל"| B
   A -->|"רשלנות"| C
-  A -->|"אחריות קפידה"| D
-  B --> E
-  E --> F
-  E --> G
-  E --> H
+  A -->|"אח. קפידה"| D
+
+  B --> E["רכיב הכרתי: מודעות"]
+  E --> F["דוקטרינות הוכחה:"]
+  F --> F1["עצימת עיניים — חשד + אי בירור"]
+  F --> F2["חזקת המודעות — תוצאות טבעיות"]
+  F --> F3["הלכת הצפיות — קרוב לוודאי = כוונה"]
+
+  B --> G{"עבירת תוצאה?"}
+  G -->|"כן"| H["רכיב חפצי: יחס לתוצאה"]
+  G -->|"לא — התנהגות"| SKIP["אין צורך ברכיב חפצי"]
+
+  H --> I{"הסעיף דורש כוונה?"}
+  I -->|"כן"| J["כוונה: במטרה לגרום"]
+  I -->|"לא — שותקת"| K["מינימום: קלות דעת"]
+
+  J --> J1["או: הלכת הצפיות ס 20ב"]
+
+  K --> K1["כוונה — רצון בתוצאה"]
+  K --> K2["אדישות — לא אכפת"]
+  K --> K3["קלות דעת — מקווה למנוע"]
 
   style A fill:#fef3c7,stroke:#d97706,color:#78350f
   style B fill:#fef3c7,stroke:#d97706,color:#78350f
+  style E fill:#ede9fe,stroke:#7c3aed,color:#3b0764
+  style H fill:#fff1f2,stroke:#e11d48,color:#831843
+  style J fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+  style J1 fill:#d1fae5,stroke:#059669,color:#064e3b
+  style K1 fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+  style K2 fill:#fef3c7,stroke:#d97706,color:#78350f
+  style K3 fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
+  style SKIP fill:#f3f4f6,stroke:#9ca3af,color:#4b5563
   style C fill:#e0f2fe,stroke:#0891b2,color:#134e4a
   style D fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
-  style F fill:#fce7f3,stroke:#e11d48,color:#831843
-  style G fill:#e0f2fe,stroke:#0891b2,color:#134e4a
-  style H fill:#d1fae5,stroke:#059669,color:#064e3b
+  style F1 fill:#fce7f3,stroke:#e11d48,color:#831843
+  style F2 fill:#e0f2fe,stroke:#0891b2,color:#134e4a
+  style F3 fill:#d1fae5,stroke:#059669,color:#064e3b
     </pre>
   </div>
 
