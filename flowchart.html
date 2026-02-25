@@ -450,14 +450,16 @@ flowchart TD
   G -->|"לא — התנהגות"| SKIP["אין צורך ברכיב חפצי"]
 
   H --> I{"הסעיף דורש כוונה?"}
-  I -->|"כן"| J["כוונה: במטרה לגרום"]
-  I -->|"לא — שותקת"| K["מינימום: קלות דעת"]
+  I -->|"כן"| J["כוונה ס 20א1: במטרה לגרום"]
+  I -->|"לא — שותקת/פזיזות"| PZ["פזיזות ס 20א2"]
 
   J --> J1["או: הלכת הצפיות ס 20ב"]
 
-  K --> K1["כוונה — רצון בתוצאה"]
-  K --> K2["אדישות — לא אכפת"]
-  K --> K3["קלות דעת — מקווה למנוע"]
+  PZ --> K2["אדישות ס 20א2א — שוויון נפש"]
+  PZ --> K3["קלות דעת ס 20א2ב — סיכון + תקווה למנוע"]
+
+  K2 --> RES1["ברפורמה: רצח — מאסר עולם"]
+  K3 --> RES2["ברפורמה: המתה — עד 12 שנים"]
 
   style A fill:#fef3c7,stroke:#d97706,color:#78350f
   style B fill:#fef3c7,stroke:#d97706,color:#78350f
@@ -465,9 +467,11 @@ flowchart TD
   style H fill:#fff1f2,stroke:#e11d48,color:#831843
   style J fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
   style J1 fill:#d1fae5,stroke:#059669,color:#064e3b
-  style K1 fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+  style PZ fill:#fef3c7,stroke:#d97706,color:#78350f
   style K2 fill:#fef3c7,stroke:#d97706,color:#78350f
   style K3 fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
+  style RES1 fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+  style RES2 fill:#e0f2fe,stroke:#0891b2,color:#134e4a
   style SKIP fill:#f3f4f6,stroke:#9ca3af,color:#4b5563
   style C fill:#e0f2fe,stroke:#0891b2,color:#134e4a
   style D fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
@@ -520,11 +524,14 @@ flowchart TD
     <div class="info"><strong>הגדרה:</strong> היחס הרצוני של העבריין כלפי התוצאה. בעבירת התנהגות — אין רכיב חפצי, מספיק מודעות בלבד. בעבירת תוצאה — חובה להוכיח גם את הרכיב החפצי.</div>
 
     <table>
-      <tr><th>דרגה</th><th>הגדרה בחוק</th><th>יחס לתוצאה</th></tr>
-      <tr><td><strong style="color:#dc2626">כוונה</strong></td><td>"במטרה לגרום לאותן תוצאות" — ס' 20(א)(1)</td><td>רצון שהתוצאה תתממש — גישה חיובית</td></tr>
-      <tr><td><strong style="color:#d97706">אדישות</strong></td><td>"בשוויון נפש לאפשרות גרימת התוצאות" — ס' 20(א)(2)(א)</td><td>לא אכפת לו אם התוצאה תקרה או לא</td></tr>
-      <tr><td><strong style="color:#2563eb">קלות דעת</strong></td><td>"בנטילת סיכון בלתי סביר, מתוך תקווה למנוע" — ס' 20(א)(2)(ב)</td><td>לא רוצה את התוצאה אבל נוטל סיכון בלתי סביר</td></tr>
+      <tr><th>דרגה</th><th>סעיף</th><th>הגדרה בחוק</th><th>יחס לתוצאה</th></tr>
+      <tr><td><strong style="color:#dc2626">כוונה</strong></td><td>20(א)(1)</td><td>"במטרה לגרום לאותן תוצאות"</td><td>רצון שהתוצאה תתממש</td></tr>
+      <tr style="background:#fff7ed"><td colspan="4" style="font-weight:700;color:#d97706;text-align:center">⬇ פזיזות — ס' 20(א)(2) — מודעות לסיכון + נטילת סיכון בלתי סביר ⬇</td></tr>
+      <tr><td><strong style="color:#d97706">├ אדישות</strong></td><td>20(א)(2)(א)</td><td>"בשוויון נפש לאפשרות גרימת התוצאות"</td><td>לא אכפת לו</td></tr>
+      <tr><td><strong style="color:#2563eb">└ קלות דעת</strong></td><td>20(א)(2)(ב)</td><td>"בנטילת סיכון בלתי סביר, מתוך תקווה למנוע"</td><td>מקווה שלא תקרה</td></tr>
     </table>
+
+    <div class="info"><strong>פזיזות (ס' 20(א)(2))</strong> היא קטגוריית-על הכוללת אדישות וקלות דעת. <strong>המשותף:</strong> שניהם מודעים לסיכון ונוטלים סיכון בלתי סביר. <strong>ההבדל:</strong> לאדיש — לא אכפת; לקל הדעת — מקווה למנוע. כשהסעיף כתוב "בפזיזות" = מספיקה קלות דעת (הרף הנמוך יותר).</div>
 
     <div class="sub" style="border-right:3px solid #dc2626">
       <h4>כוונה <span class="t t-s">ס' 20(א)(1)</span></h4>
@@ -539,8 +546,19 @@ flowchart TD
       </ul>
     </div>
 
+    <div class="sub" style="border-right:3px solid #d97706;border-top:3px solid #d97706">
+      <h4>פזיזות <span class="t t-s">ס' 20(א)(2)</span> — קטגוריית-על</h4>
+      <p><strong>הגדרה:</strong> מודעות לאפשרות גרימת התוצאה + נטילת סיכון בלתי סביר ביודעין. פזיזות מתחלקת לשתי דרגות:</p>
+      <ul>
+        <li><strong>אדישות</strong> (ס' 20(א)(2)(א)) — שוויון נפש. הדרגה <strong>החמורה</strong> יותר.</li>
+        <li><strong>קלות דעת</strong> (ס' 20(א)(2)(ב)) — תקווה למנוע. הדרגה <strong>הקלה</strong> יותר.</li>
+      </ul>
+      <p><strong>כשסעיף כתוב "בפזיזות"</strong> = מספיק להוכיח קלות דעת (הרף הנמוך). כשכתוב "במזיד" = מודעות + פזיזות (לפחות קלות דעת).</p>
+      <div class="tip"><strong>למבחן:</strong> תמיד ציין איזה סוג פזיזות — אדישות או קלות דעת. אל תכתוב סתם "פזיזות" בלי לפרט!</div>
+    </div>
+
     <div class="sub" style="border-right:3px solid #d97706">
-      <h4>אדישות <span class="t t-s">ס' 20(א)(2)(א)</span></h4>
+      <h4>אדישות <span class="t t-s">ס' 20(א)(2)(א)</span> — פזיזות חמורה</h4>
       <p><strong>שוויון נפש</strong> — חוסר אכפתיות לגורל הקורבן. לקח סיכון בלתי סביר <strong>ולא אכפת לו</strong> אם התוצאה תקרה.</p>
       <ul>
         <li><span class="t t-c">טמטאווי</span> דרס שוטר, מודע לסכנה ו<strong>אדיש</strong> לאפשרות → הרשעה בהריגה (פזיזות בדרגת אדישות)</li>
@@ -550,7 +568,7 @@ flowchart TD
     </div>
 
     <div class="sub" style="border-right:3px solid #2563eb">
-      <h4>קלות דעת <span class="t t-s">ס' 20(א)(2)(ב)</span></h4>
+      <h4>קלות דעת <span class="t t-s">ס' 20(א)(2)(ב)</span> — פזיזות קלה</h4>
       <p><strong>נטילת סיכון בלתי סביר מתוך תקווה למנוע</strong> — מודע לסיכון, לא רוצה את התוצאה, אבל נוטל סיכון שאדם סביר לא היה נוטל.</p>
       <ul>
         <li><span class="t t-c">זיסרמן</span> חייל ניקה נשק, שיחק עם ההדק וירה בחברו — מודע לסיכון אבל "לא העמיק במחשבה" → קלות דעת</li>
