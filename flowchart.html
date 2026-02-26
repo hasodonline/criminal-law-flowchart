@@ -298,10 +298,14 @@ flowchart TD
   O -->|"באמצעות"| Q["מבצע באמצעות ס 29ג"]
   O -->|"משדל"| R["משדל ס 30"]
   O -->|"מסייע"| S["מסייע ס 31"]
-  P --> YES["מסקנה"]
-  Q --> YES
-  R --> YES
-  S --> YES
+  P --> DEF
+  Q --> DEF
+  R --> DEF
+  S --> DEF
+
+  DEF{"סייג? הגנה עצמית ס 34י"}
+  DEF -->|"6 תנאים מתקיימים"| FREE["פטור מאחריות"]
+  DEF -->|"לא חל"| YES["מסקנה — הרשעה"]
 
   style A fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
   style C fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
@@ -318,6 +322,8 @@ flowchart TD
   style R fill:#fce7f3,stroke:#db2777,color:#831843
   style S fill:#fce7f3,stroke:#db2777,color:#831843
   style YES fill:#d1fae5,stroke:#059669,color:#064e3b
+  style FREE fill:#d1fae5,stroke:#059669,color:#064e3b
+  style DEF fill:#fce7f3,stroke:#e11d48,color:#831843
   style NIS fill:#fef3c7,stroke:#d97706,color:#78350f
   style X1 fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
   style X2 fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
@@ -355,10 +361,35 @@ flowchart TD
       <h4>סוגי עבירות מיוחדים</h4>
       <ul>
         <li><strong>סטטוס</strong> — עצם ההימצאות במצב מסוים = עבירה</li>
-        <li><strong>החזקה</strong> — שליטה בדבר: ממשית / מיוחסת / קונסטרוקטיבית <span class="t t-c">הוכשטט</span></li>
+        <li><strong>החזקה</strong> — שליטה בדבר (ראה טבלה מפורטת למטה) <span class="t t-c">הוכשטט</span></li>
         <li><strong>מחדל</strong> — 3 תנאים: נורמה אוסרת + חובה לפעול + הפרת חובה <span class="t t-c">מוסאזאדי</span></li>
         <li><strong>עבירה שותקת</strong> (לא מצוין י"נ) = מחשבה פלילית</li>
       </ul>
+    </div>
+
+    <div class="sub" style="border-right:3px solid #7c3aed">
+      <h4>עבירות החזקה — הגדרה ס' 34 <span class="t t-c">הוכשטט</span></h4>
+      <div class="info"><strong>הגדרת החזקה:</strong> "שליטתו של אדם בדבר המצוי בידו, בידו של אחר או בכל מקום שהוא." במרכז ההגדרה — <strong>עיקרון השליטה</strong> המורכב משני יסודות: <strong>פיזי</strong> (הימצאות הנכס בידי האדם/שליטה) + <strong>נפשי</strong> (מודעות/רצון לשלוט בנכס).</div>
+
+      <table>
+        <tr><th>סוג</th><th>מיקום החפץ</th><th>יסוד פיזי</th><th>יסוד נפשי</th></tr>
+        <tr><td><strong>שליטה פיזית (ממשית)</strong></td><td>אצל המחזיק</td><td>יכולת פיזית לעשייה בחפץ + בלעדיות בגורל המוחזק</td><td>מודעות להחזקה ולקיום</td></tr>
+        <tr><td><strong>שליטה מיוחסת</strong></td><td>החפץ אצל אחר</td><td>יכולת לקבוע גורלו + בלעדיות</td><td>מודעות להחזקה ולקיום</td></tr>
+        <tr><td><strong>החזקה קונסטרוקטיבית</strong></td><td>אצל חבר חבורה</td><td>לאחד מהחבורה יש החזקה פיזית/מיוחסת</td><td><strong>מודעות + הסכמה</strong> לעצם ההחזקה אצל חבר</td></tr>
+      </table>
+
+      <p><span class="t t-c">הוכשטט</span> חבילת סמים נשלחה על שם הנאשם למכס. למרות שלא הזמין — היה <strong>בעל השליטה</strong>: רק הוא יכול היה לתת ייפוי כוח לשחרור. גם <strong>יכולת למנוע</strong> מאחרים = שליטה. הורשע.</p>
+
+      <div class="sub">
+        <h4>חזקות משפטיות ופסיקתיות</h4>
+        <ul>
+          <li><strong>חזקות משפטיות</strong> — מעבירות את נטל ההוכחה אל הנאשם (מאזן הסתברויות). דוגמה: ס' 144 — מי שמקום נמצא בו נשק, רואים את מחזיק המקום כמחזיק הנשק</li>
+          <li><strong>חזקת ההחזקה התכופה</strong> (פסיקתית) — "מי שנמצא ברשותו רכוש גנוב בסמוך לזמן הגניבה — הוא הגנב"</li>
+        </ul>
+        <div class="warn"><strong>סתירת החזקה קונסטרוקטיבית:</strong> מספיק <strong>מאזן הסתברויות</strong> (לא "מעבר לספק סביר")!</div>
+      </div>
+
+      <div class="tip"><strong>מטרות עבירות החזקה:</strong> (1) <strong>מניעה</strong> — החזקת נשק/סם מעידה על עבירה עתידית (2) <strong>אינדיקציה</strong> — מעידה על עבירה שבוצעה (למשל רכוש גנוב)</div>
     </div>
   </div>
 </section>
@@ -1047,6 +1078,113 @@ flowchart TD
   </div>
 </section>
 
+<!-- ======== STEP 5 — SELF DEFENSE ======== -->
+<section class="section" id="step5">
+  <div class="section-header">
+    <div class="section-num green">5</div>
+    <div class="section-title">הגנה עצמית <span class="t t-s">ס' 34י-34י1</span> <span class="t t-g">סייג מסוג הצדק</span></div>
+  </div>
+
+  <div class="info"><strong>מהו סייג?</strong> הצדק — המעשה עצמו בהינתן שאר הנסיבות אינו פוגע בערכי החברה. "מוצדק היה לעשות זאת." סייגי הצדק: הגנה עצמית, הגנת הבית, צורך, כורח, צידוק.</div>
+
+  <div class="chart">
+    <pre class="mermaid">
+flowchart TD
+  A["טענת הגנה עצמית ס 34י"]
+  A --> B{"6 תנאים מצטברים"}
+
+  B --> C1["1. נחיצות — דרוש + חובת נסיגה"]
+  B --> C2["2. מיידיות — סמיכות זמנים"]
+  B --> C3["3. להדוף תקיפה — מגננה, לא מתקפה"]
+  B --> C4["4. שלא כדין — לא צו/שוטר"]
+  B --> C5["5. סכנה מוחשית — ממשית, לא ערטילאית"]
+  B --> C6["6. לא נכנס בהתנהגות פסולה"]
+
+  C1 --> D{"כולם מתקיימים?"}
+  C2 --> D
+  C3 --> D
+  C4 --> D
+  C5 --> D
+  C6 --> D
+
+  D -->|"כן"| YES["פטור מאחריות"]
+  D -->|"לא"| NO["ההגנה נדחית"]
+
+  style A fill:#d1fae5,stroke:#059669,color:#064e3b
+  style YES fill:#d1fae5,stroke:#059669,color:#064e3b
+  style NO fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+  style D fill:#fce7f3,stroke:#e11d48,color:#831843
+    </pre>
+  </div>
+
+  <!-- 6 conditions -->
+  <div class="card card-green">
+    <h3>ששת התנאים להגנה עצמית (מצטברים)</h3>
+
+    <div class="sub" style="border-right:3px solid #2563eb">
+      <h4>1. נחיצות ("דרוש") <span class="t t-c">פרץ</span></h4>
+      <p><strong>נחיצות איכותית:</strong> האם ניתן היה לפעול בדרך אחרת למנוע את התקיפה?</p>
+      <p><strong>חובת הנסיגה</strong> (מהמשפט האנגלי) — אם ניתן לסגת, זה מה שצריך לעשות.</p>
+      <p><span class="t t-c">פרץ</span> סכסוך שכנים אלים. הנאשם יכול היה לחזור לביתו אך העדיף להשיב מכות → <strong>הורשע</strong> כי לא עמד בתנאי הנחיצות.</p>
+    </div>
+
+    <div class="sub" style="border-right:3px solid #7c3aed">
+      <h4>2. מיידיות ("באופן מיידי")</h4>
+      <p>ההגנה צריכה להיעשות <strong>בסמיכות זמנים</strong> לתקיפה. אם אדם יודע יום מראש שפלוני יתקוף — יכול להתקשר למשטרה.</p>
+    </div>
+
+    <div class="sub" style="border-right:3px solid #0891b2">
+      <h4>3. "להדוף תקיפה" <span class="t t-c">פרידמן</span></h4>
+      <p>רק איום/ניסיון שיש בו ממש. יש לוודא שהמתגונן <strong>לא חצה את הגבול בין מגננה למתקפה</strong>.</p>
+      <p><span class="t t-c">פרידמן</span> נטילת סכין מהתוקף = מגננה. דקירת התוקף כשלא הכרחי = <strong>מתקפה אסורה</strong>.</p>
+    </div>
+
+    <div class="sub" style="border-right:3px solid #059669">
+      <h4>4. "שלא כדין"</h4>
+      <p>התקיפה שממנה מתגוננים חייבת להיות <strong>שלא כדין</strong> (בניגוד לתקיפה ע"פ צו או שוטר).</p>
+      <p>השופט אגרנט: אם שוטר מבקש לעצור אדם <strong>שלא כדין</strong> — מותר להתנגד.</p>
+    </div>
+
+    <div class="sub" style="border-right:3px solid #d97706">
+      <h4>5. סכנה מוחשית <span class="t t-c">ויניצקי</span></h4>
+      <p>הסכנה חייבת להיות <strong>מוחשית וממשית</strong>, לא ערטילאית או רחוקה.</p>
+      <p><span class="t t-c">ויניצקי</span> סכסוך חניה — הכה קשיש במכת אגרוף שהמיתה אותו. הסכנה לא הייתה מוחשית (סכסוך עם קשיש) → <strong>אין הגנה עצמית</strong>.</p>
+    </div>
+
+    <div class="sub" style="border-right:3px solid #dc2626">
+      <h4>6. לא נכנס למצב בהתנהגות פסולה <span class="t t-s">ס' 34י סיפא</span> <span class="t t-c">דבעאת</span></h4>
+      <p>"אין אדם פועל תוך הגנה עצמית מקום ש<strong>הביא בהתנהגותו הפסולה</strong> לתקיפה תוך שהוא צופה מראש את אפשרות התפתחות הדברים."</p>
+      <p><span class="t t-c">דבעאת</span> המערערים <strong>הצטיידו מראש</strong> בגרזן, מוט ברזל, סכין ומקל עץ. כאשר הגיעו תוקפים לחנותם — תקפו בכלים. <strong>אין הגנה עצמית</strong> — נכנסו למצב בהתנהגות פסולה.</p>
+      <div class="warn"><strong>אם המתגונן התחיל במריבה</strong> — לא יוגדר כמי שפעל תוך הגנה עצמית!</div>
+    </div>
+  </div>
+
+  <!-- הגנת בית מגורים -->
+  <div class="card card-teal">
+    <h3>הגנת בית מגורים, עסק ומשק חקלאי <span class="t t-s">ס' 34י1</span> <span class="t t-c">דרומי</span></h3>
+    <div class="info"><strong>מקרה פרטי של הגנה עצמית</strong> — נוסף בשנת 2008 בעקבות <strong>פרשת שי דרומי</strong>. רחב יותר מהגנה עצמית רגילה.</div>
+    <ul>
+      <li>די שאדם <strong>יתפרץ למקום מגוריו/עסקו/משק חקלאי</strong> כדי לבצע עבירה → ניתן לנקוט הגנה</li>
+      <li><strong>אין דרישה לתקיפה שלא כדין</strong></li>
+      <li><strong>אין דרישה לסכנה מוחשית</strong></li>
+      <li>ניתן להפעיל <strong>כוח בלתי מידתי</strong> כנגד פורצים וגנבים להגנה על רכוש</li>
+    </ul>
+    <div class="tip"><strong>לפני התיקון:</strong> אסור היה לפגוע בפורץ כשכוונתו רק לגניבת רכוש. <strong>אחרי:</strong> מותר.</div>
+  </div>
+
+  <!-- הגנה עצמית מדומה -->
+  <div class="card card-purple">
+    <h3>הגנה עצמית מדומה (טעות במצב דברים)</h3>
+    <div class="info"><strong>מצב:</strong> אדם חושב בטעות שהוא מותקף ופועל ב"הגנה עצמית" — אך התקיפה לא הייתה אמתית. הרכבת <strong>הגנת הטעות</strong> על <strong>הגנה עצמית</strong>.</div>
+    <p><strong>דוגמה:</strong> א' (הסכסכן) מטעה את ראובן לחשוב שדני עומד לתקוף. ראובן תוקף את דני כ"הגנה עצמית".</p>
+    <ul>
+      <li><strong>ראובן:</strong> פטור מתקיפה — הגנת טעות על הגנה עצמית</li>
+      <li><strong>א':</strong> יואשם ב<strong>ביצוע תקיפה באמצעות אחר</strong> (ס' 29(ג))</li>
+    </ul>
+    <div class="warn"><strong>חריג:</strong> הטעות לא תמיד פוטרת. אם ראובן הטמין פצצה "דמה" שהתבררה כאמתית → פטור מרצח (טעה), אבל <strong>אחראי לעבירת איומים</strong>.</div>
+  </div>
+</section>
+
 <!-- ======== EXAM CASES ======== -->
 <section class="section" id="cases">
   <div class="section-header">
@@ -1181,6 +1319,25 @@ flowchart TD
     </div>
   </div>
 
+  <!-- CASE 8: הגנה עצמית -->
+  <div class="exam">
+    <div class="exam-head">תשפ"ב מועד א' — גלית ואבנר: הגנה עצמית (ס' 34י)</div>
+    <div class="exam-body">
+      <div class="exam-facts"><h4>עובדות</h4>
+        <p>אבנר אחז בגלית ונעל את הדלת כך שלא תוכל לצאת. גלית הדפה אותו והכתה בראשו.</p>
+      </div>
+      <div class="sb s6"><h4>בדיקת 6 תנאי הגנה עצמית</h4>
+        <p><strong>1. נחיצות:</strong> ההגנה — לא הייתה דרך אחרת. <strong>אבל:</strong> החבטה בראשו <em>לאחר</em> ההדיפה — ספק אם נחוצה</p>
+        <p><strong>2. מיידיות:</strong> ✓ פעלה מיד לאחר שאחז בה</p>
+        <p><strong>3. להדוף תקיפה:</strong> ✓ אבנר ניסה לאחוז + נעל דלת. לא ניצלה את המצב לתקיפה</p>
+        <p><strong>4. שלא כדין:</strong> ✓ תקיפתו של אבנר שלא ע"פ דין</p>
+        <p><strong>5. סכנה מוחשית:</strong> ✓ הרגישה שאבנר הולך לפגוע בה</p>
+        <p><strong>6. התנהגות פסולה:</strong> ✓ גלית לא החלה במריבה</p>
+        <p><strong>מסקנה: סייג הגנה עצמית חל — פטורה מאחריות</strong></p>
+      </div>
+    </div>
+  </div>
+
   <!-- TRUE/FALSE -->
   <div class="card card-gray">
     <h3>סיכום נכון/לא נכון מכל המבחנים</h3>
@@ -1194,6 +1351,9 @@ flowchart TD
       <tr><td>סתירת החזקה קונסטרוקטיבית = מעבר לספק סביר?</td><td><strong style="color:#dc2626">✗</strong></td><td>מאזן הסתברויות מספיק</td></tr>
       <tr><td>רצח רגיל רק בכוונה (לאחר הרפורמה)?</td><td><strong style="color:#dc2626">✗</strong></td><td>גם באדישות</td></tr>
       <tr><td>הרפורמה: הרשעה ברצח באדישות + מאסר עולם?</td><td><strong style="color:#059669">✓</strong></td><td>השינוי המרכזי של הרפורמה</td></tr>
+      <tr><td>הגנה עצמית דורשת סכנה מוחשית?</td><td><strong style="color:#059669">✓</strong></td><td>תנאי 5 — <span class="t t-c">ויניצקי</span></td></tr>
+      <tr><td>הגנת בית (ס' 34י1) דורשת סכנה מוחשית?</td><td><strong style="color:#dc2626">✗</strong></td><td>חוק דרומי — אין דרישה לסכנה מוחשית ולא לתקיפה שלא כדין</td></tr>
+      <tr><td>מי שהתחיל במריבה יכול לטעון הגנה עצמית?</td><td><strong style="color:#dc2626">✗</strong></td><td>ס' 34י סיפא — כניסה למצב בהתנהגות פסולה <span class="t t-c">דבעאת</span></td></tr>
     </table>
   </div>
 </section>
@@ -1227,6 +1387,10 @@ flowchart TD
       <li><strong>ניסיון לסיוע</strong> = לא עניש (הרחבה על הרחבה)</li>
       <li><strong>משדל/מסייע + עבירה נוספת</strong> = רשלנות. אין רשלנות מקבילה? → אין הרשעה</li>
       <li><strong>חרטה</strong> = רצון פנימי + מניעה בפועל (לא קושי חיצוני)</li>
+      <li><strong>הגנה עצמית</strong> = 6 תנאים מצטברים! חסר אחד = נדחית</li>
+      <li><strong>הגנת בית (34י1)</strong> ≠ הגנה עצמית רגילה (אין דרישת סכנה מוחשית/תקיפה שלא כדין)</li>
+      <li><strong>התחלת מריבה</strong> = שולל הגנה עצמית (התנהגות פסולה, ס' 34י סיפא)</li>
+      <li><strong>החזקה קונסטרוקטיבית</strong> = מודעות + הסכמה של שאר בני החבורה (לא מספיק נוכחות!)</li>
     </ul>
   </div>
 
@@ -1238,6 +1402,7 @@ flowchart TD
       <li>קש"ס (אם תוצאה): עובדתי (אלמלא) → משפטי (צפיות)</li>
       <li>יסוד נפשי: הכרתי (מודעות + דוקטרינות) → חפצי (כוונה/פזיזות)</li>
       <li>צדדים לעבירה (אם רלוונטי): בצוותא / משדל / מסייע / עבירה נוספת</li>
+      <li>סייגים (אם רלוונטי): הגנה עצמית (6 תנאים) / הגנת בית (ס' 34י1)</li>
       <li><strong>מסקנה!</strong></li>
     </ol>
   </div>
