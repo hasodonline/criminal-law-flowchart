@@ -275,7 +275,10 @@ flowchart TD
   A["0 — זהה נאשמים + סווג"] --> B{"התנהגות / תוצאה?"}
   B -->|"התנהגות"| C["1 — י.ע: התנהגותי + נסיבתי"]
   B -->|"תוצאה"| D["1 — י.ע: התנהגותי + נסיבתי + תוצאתי"]
-  D --> E["2 — קש.ס עובדתי: אלמלא"]
+  D --> D1{"תוצאה התממשה?"}
+  D1 -->|"כן"| E["2 — קש.ס עובדתי: אלמלא"]
+  D1 -->|"לא"| NIS["ניסיון ס 25 — 3 מבחנים"]
+  NIS --> I
   E --> F{"יש קש.ס?"}
   F -->|"לא"| X1["אין הרשעה"]
   F -->|"כן"| G["קש.ס משפטי: צפיות"]
@@ -315,6 +318,7 @@ flowchart TD
   style R fill:#fce7f3,stroke:#db2777,color:#831843
   style S fill:#fce7f3,stroke:#db2777,color:#831843
   style YES fill:#d1fae5,stroke:#059669,color:#064e3b
+  style NIS fill:#fef3c7,stroke:#d97706,color:#78350f
   style X1 fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
   style X2 fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
     </pre>
@@ -377,7 +381,7 @@ flowchart TD
     </div>
     <div class="sub">
       <h4>3. רכיב תוצאתי <span class="t t-g">רק בעבירות תוצאה</span></h4>
-      <p>מהי התוצאה שנגרמה?</p>
+      <p>מהי התוצאה שנגרמה? <strong>אם לא התממשה → בדוק ניסיון (ס' 25)</strong></p>
     </div>
   </div>
 </section>
@@ -638,6 +642,139 @@ flowchart TD
   </div>
 </section>
 
+
+<!-- ======== ATTEMPT (ניסיון) ======== -->
+<section class="section" id="attempt">
+  <div class="section-header">
+    <div class="section-num amber">★</div>
+    <div class="section-title">ניסיון <span class="t t-s">ס' 25-28</span> <span class="t t-w">כשהתוצאה לא התממשה / נסיבה לא התקיימה</span></div>
+  </div>
+
+  <div class="info"><strong>מתי?</strong> כשהיסוד העובדתי <strong>חסר</strong> — התוצאה לא התממשה, הנסיבה לא התקיימה, או ההתנהגות הופסקה. ס' 25: "אדם מנסה לעבור עבירה אם, <strong>במטרה לבצעה</strong>, עשה מעשה שאין בו הכנה בלבד והעבירה לא הושלמה."</div>
+
+  <div class="chart">
+    <pre class="mermaid">
+flowchart TD
+  A{"י.ע חסר — מה חסר?"}
+  A -->|"תוצאה לא התממשה"| B["ירה והחטיא"]
+  A -->|"נסיבה לא התקיימה"| C["החזיק קמח במקום סם"]
+  A -->|"התנהגות הופסקה"| D["הופרע באמצע"]
+
+  B --> E{"חצה מהכנה לניסיון?"}
+  C --> E
+  D --> E
+
+  E -->|"3 מבחנים"| F["1. קרבה להשלמה"]
+  E -->|"3 מבחנים"| G["2. סרט אילם — חד משמעיות"]
+  E -->|"3 מבחנים"| H["3. צעד אפקטיבי — תחילת שרשרת"]
+
+  F --> YES["ניסיון — עניש"]
+  G --> YES
+  H --> YES
+  E -->|"רק הכנה"| NO["הכנה — לא עניש"]
+
+  YES --> NLC{"צליח או לא צליח?"}
+  NLC -->|"צליח"| OK["ניסיון רגיל"]
+  NLC -->|"לא צליח ס 26"| LC["עדיין עניש!"]
+
+  style A fill:#fef3c7,stroke:#d97706,color:#78350f
+  style E fill:#fce7f3,stroke:#e11d48,color:#831843
+  style YES fill:#d1fae5,stroke:#059669,color:#064e3b
+  style NO fill:#f3f4f6,stroke:#9ca3af,color:#4b5563
+  style LC fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+    </pre>
+  </div>
+
+  <!-- 3 מבחנים -->
+  <div class="card card-amber">
+    <h3>3 מבחני העזר — הכנה או ניסיון?</h3>
+    <div class="warn">קו הגבול עמום. אין מבחן אחד מכריע — יש להפעיל את כל השלושה ולראות אם יש הסכמה.</div>
+
+    <div class="sub" style="border-right:3px solid #dc2626">
+      <h4>1. מבחן הקרבה להשלמה</h4>
+      <p><strong>נקודת מוצא = העבירה המושלמת.</strong> כמה ההתנהגות הייתה קרובה להשלמה — <strong>כמותית</strong> (כמה שלבים חסרו) + <strong>איכותית</strong> (כמה משמעותיים השלבים החסרים)?</p>
+      <ul>
+        <li>הרבה שלבים חסרים / שלבים איכותיים חסרים → <strong>הכנה</strong></li>
+        <li>מעט שלבים חסרים / שלבים טכניים בלבד → <strong>ניסיון</strong></li>
+      </ul>
+      <p><span class="t t-c">סרור</span> שלף רימון + נצרה → "קרבה מספקת" → ניסיון</p>
+    </div>
+
+    <div class="sub" style="border-right:3px solid #7c3aed">
+      <h4>2. מבחן הסרט האילם (חד-משמעיות) <span class="t t-c">פלר</span></h4>
+      <p><strong>נקודת מוצא = ההכנה.</strong> כצופה ב"סרט אילם" (בלי הסבר מילולי) — האם ניתן להבין <strong>חד-משמעית</strong> שהנאשם מנסה לבצע עבירה?</p>
+      <ul>
+        <li>המעשה עדיין נראה תמים → <strong>הכנה</strong></li>
+        <li>ברור מהמעשה שמדובר בניסיון לעבירה → <strong>ניסיון</strong></li>
+      </ul>
+      <p><span class="t t-c">סנקר</span> פטרול חמוש סביב מסעדת אלפרון → ניסיון (העליון הפך את המחוזי)</p>
+      <p><span class="t t-c">מנבר</span> סדרת פעולות מתמשכת לסחר בנשק → ניסיון</p>
+      <div class="info"><strong>ביקורת (וויליאמס):</strong> נתון למניפולציה — מתוחכמים יסוו, תמימים עם מזל רע "ייפלו".</div>
+    </div>
+
+    <div class="sub" style="border-right:3px solid #059669">
+      <h4>3. מבחן הצעד האפקטיבי (תחילת הביצוע)</h4>
+      <p><strong>המבחן המרחיב ביותר.</strong> מחפש את החוליה בשרשרת שאם לא הייתה מופסקת — הייתה מובילה באופן טבעי להשלמת העבירה. <strong>גם שלב מוקדם בשרשרת מספיק!</strong></p>
+      <p><span class="t t-c">סריס</span> רדף, הדביק, תפס, סתם פה → "חוליות ברורות בשרשרת" → ניסיון לאונס (ברק)</p>
+      <p><span class="t t-c">אלדד</span> הגיע לדירה אחרי שיחות מיניות עם "קטינה" → צעד אפקטיבי → ניסיון</p>
+    </div>
+  </div>
+
+  <!-- יסוד נפשי של ניסיון -->
+  <div class="card card-purple">
+    <h3>היסוד הנפשי של ניסיון — שתי שכבות!</h3>
+    <table>
+      <tr><th>שכבה</th><th>תוכן</th></tr>
+      <tr><td><strong>שכבה 1</strong></td><td>הי"נ של העבירה המושלמת — מודעות (הכרתי) + כוונה/פזיזות (חפצי)</td></tr>
+      <tr><td><strong>שכבה 2 — מוגברת</strong></td><td><strong>כוונה להשלים את העבירה</strong> — "לפצות" על החוסר בי"ע</td></tr>
+    </table>
+    <p>ניתן להשתמש בעצימת עיניים + הלכת הצפיות גם בניסיון <span class="t t-s">ס' 34כד</span></p>
+    <div class="warn"><strong>ביקורת (פרופ' דן לייב):</strong> אסור להשתמש בהלכת הצפיות בניסיון — מרחיב מעגל הפללה.</div>
+    <div class="info"><strong>אין ניסיון לעבירת רשלנות!</strong> רשלנות = חוסר מודעות. אי אפשר "לנסות" דבר שלא מודעים אליו.</div>
+  </div>
+
+  <!-- ניסיון לא צליח -->
+  <div class="card card-red">
+    <h3>ניסיון לא צליח <span class="t t-s">ס' 26</span> <span class="t t-w">עדיין עניש!</span></h3>
+    <div class="info">"אין נפקא מינא אם עשיית העבירה לא הייתה אפשרית מחמת מצב דברים שהמנסה לא היה מודע לו."</div>
+
+    <table>
+      <tr><th>סוג חוסר צליחות</th><th>דוגמה</th><th>עניש?</th></tr>
+      <tr><td><strong>נסיבה לא קיימת</strong></td><td>מחזיק קמח במקום סם; יורה בגופה</td><td><strong>כן</strong> <span class="t t-c">גרציאנו</span></td></tr>
+      <tr><td><strong>אמצעי בלתי הולם</strong></td><td>רובה מקולקל; כמות רעל קטנה מדי</td><td><strong>כן</strong> <span class="t t-c">פלוני (295/10)</span></td></tr>
+      <tr><td><strong>היעדר נסיבה</strong></td><td>כספת ריקה; קורבן עזב</td><td><strong>כן</strong></td></tr>
+      <tr><td><strong>אמצעי אבסורדי</strong></td><td>וודו, כישוף, מילות קסם</td><td><strong>לא</strong> (שיקול דעת)</td></tr>
+      <tr><td><strong>אי-צליחות משפטית</strong></td><td>"עבירה מדומה" — האיסור לא קיים</td><td><strong>לא</strong> (אין עבירה)</td></tr>
+    </table>
+  </div>
+
+  <!-- פטור עקב חרטה -->
+  <div class="card card-green">
+    <h3>פטור עקב חרטה למנסה <span class="t t-s">ס' 28</span></h3>
+    <div class="sub">
+      <h4>4 תנאים מצטברים</h4>
+      <ol>
+        <li>קיום תנאי ס' 25 — היה ניסיון</li>
+        <li><strong>"מחפץ נפשו בלבד"</strong> — רצון פנימי, לא נסיבות חיצוניות <span class="t t-c">מצראווה</span></li>
+        <li><strong>"מתוך חרטה"</strong> — גם חרטה תועלתנית מספיקה <span class="t t-c">נחושתן</span></li>
+        <li><strong>תרומה של ממש למניעה</strong> — מעשה אקטיבי לסיכול התוצאה</li>
+      </ol>
+    </div>
+    <p><strong>נטל הוכחה:</strong> על הנאשם, ברמת <strong>מאזן הסתברויות</strong> (מעל 50%)</p>
+    <div class="warn"><strong>אין טענות חלופיות:</strong> לא ניתן לטעון "לא התכוונתי, ואם התכוונתי — התחרטתי". יש לבחור גרסה אחת.</div>
+  </div>
+
+  <!-- עונש + חריגים -->
+  <div class="card card-gray">
+    <h3>עונש וחריגים</h3>
+    <ul>
+      <li><strong>עונש:</strong> לאחר תיקון 39 — <strong>שווה לעונש העבירה המושלמת</strong> (ס' 34ד). אבל עונשי חובה ומינימום <strong>לא חלים</strong> על ניסיון.</li>
+      <li><strong>ס' 34ג:</strong> אין ניסיון לעבירת <strong>חטא</strong> — רק עוון או פשע.</li>
+      <li><strong>ניסיון לסיוע = לא עניש</strong> (הרחבה על הרחבה)</li>
+      <li><strong>סיוע לניסיון = כן עניש</strong></li>
+    </ul>
+  </div>
+</section>
 
 <!-- ======== STEP 4 — PARTIES ======== -->
 <section class="section" id="step4">
@@ -995,7 +1132,24 @@ flowchart TD
     </div>
   </div>
 
-  <!-- CASE 5 -->
+  <!-- CASE 5: ניסיון -->
+  <div class="exam">
+    <div class="exam-head">תשפ"ב מועד א' — גלית: סמים מדומים + ניסיון לא צליח (ס' 7א + 13)</div>
+    <div class="exam-body">
+      <div class="exam-facts"><h4>עובדות</h4>
+        <p>גלית מצאה מזוודה עם אבקה לבנה. התקשרה לחבר סוחר למכור. בביקורת התברר: <strong>לא סם</strong>.</p>
+      </div>
+      <div class="sb s1"><h4>שלב 0</h4><p>ס' 7(א) החזקת סם + ס' 13 סחר. <strong>אבל לא סם!</strong> → נסיבה לא מתקיימת → ניסיון</p></div>
+      <div class="sb s3"><h4>ניסיון (ס' 25+26)</h4>
+        <p><strong>3 מבחנים:</strong> קרבה ✓ | סרט אילם ✓ | צעד אפקטיבי ✓</p>
+        <p><strong>ניסיון לא צליח (ס' 26):</strong> חוסר צליחות נסיבה = עדיין עניש! <span class="t t-c">גרציאנו</span></p>
+        <p><strong>י"נ:</strong> מודעות (חשבה שזה סם) + כוונה להשלים (התקשרה לסוחר, הגיעה למכור)</p>
+        <p><strong>מסקנה: ניתן להרשיע בניסיון להחזקת/סחר בסם</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 6 -->
   <div class="exam">
     <div class="exam-head">תשפ"ב מועד ב' — אהוד, גדעון ודניאל — שוד + אונס (ס' 431 + 345)</div>
     <div class="exam-body">
