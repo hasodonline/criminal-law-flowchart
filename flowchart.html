@@ -246,13 +246,107 @@ td {
 ul, ol { padding-right: 22px; }
 li { margin: 4px 0; }
 
-/* PRINT */
+/* WRITING FORMULA */
+.formula {
+  background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);
+  border: 2px solid #d97706;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 12px 0;
+  font-weight: 500;
+  position: relative;
+}
+.formula::before {
+  content: "נוסחת כתיבה למבחן";
+  display: block;
+  font-weight: 800;
+  font-size: 0.92em;
+  color: #92400e;
+  margin-bottom: 6px;
+}
+
+/* PRINT — A4 optimized */
+@page {
+  size: A4;
+  margin: 15mm 12mm 15mm 12mm;
+}
+
 @media print {
-  body { font-size: 12px; }
-  .container { padding: 10px; max-width: 100%; }
-  .card, .sub, .exam { break-inside: avoid; }
-  .section { break-before: auto; }
-  .chart svg { max-width: 100% !important; }
+  body {
+    font-size: 11px;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .container {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  /* Section headers always start at top of content flow */
+  .section {
+    break-inside: auto;
+    margin: 20px 0 10px 0;
+  }
+
+  .section-header {
+    break-after: avoid;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+  }
+
+  /* Prevent splitting inside visual units */
+  .card, .sub, .exam, .chart, .info, .warn, .tip, .formula {
+    break-inside: avoid;
+  }
+
+  /* Tables should not split */
+  table, thead, tbody, tr {
+    break-inside: avoid;
+  }
+
+  /* Keep headers attached to their content */
+  h1, h2, h3, h4 {
+    break-after: avoid;
+  }
+
+  /* Charts must never split */
+  .chart {
+    break-inside: avoid;
+    break-before: auto;
+  }
+
+  .chart svg {
+    max-width: 100% !important;
+    max-height: 650px !important;
+  }
+
+  /* Major sections start on new page */
+  #step0, #step2, #step3, #attempt, #step4, #step5, #cases, #quick {
+    break-before: page;
+  }
+
+  /* Exam cases: each on its own chunk */
+  .exam {
+    break-inside: avoid;
+    break-before: auto;
+    margin: 10px 0;
+  }
+
+  /* Reduce padding in print */
+  .card { padding: 14px; margin: 8px 0; }
+  .sub { padding: 12px; margin: 8px 0; }
+  .exam-body { padding: 12px 16px; }
+
+  /* Tags stay visible */
+  .t {
+    border: 1px solid currentColor;
+    padding: 0 5px;
+  }
+
+  /* Footer */
+  footer { margin-top: 20px; text-align: center; font-size: 0.9em; }
 }
 </style>
 </head>
@@ -391,6 +485,8 @@ flowchart TD
 
       <div class="tip"><strong>מטרות עבירות החזקה:</strong> (1) <strong>מניעה</strong> — החזקת נשק/סם מעידה על עבירה עתידית (2) <strong>אינדיקציה</strong> — מעידה על עבירה שבוצעה (למשל רכוש גנוב)</div>
     </div>
+
+    <div class="formula">"ס' [מספר] מגדיר עבירת [התנהגות/תוצאה]. הנאשמים הפוטנציאליים הם: [שמות]. לכל נאשם ננתח את העבירה בנפרד. [שם הנאשם] — ננתח תחילה את היסוד העובדתי: <strong>רכיב התנהגותי</strong> — [תאר מעשה]; <strong>רכיב נסיבתי</strong> — [תאר נסיבה]; <strong>רכיב תוצאתי</strong> — [תאר תוצאה, אם תוצאה]."</div>
   </div>
 </section>
 
@@ -414,6 +510,8 @@ flowchart TD
       <h4>3. רכיב תוצאתי <span class="t t-g">רק בעבירות תוצאה</span></h4>
       <p>מהי התוצאה שנגרמה? <strong>אם לא התממשה → בדוק ניסיון (ס' 25)</strong></p>
     </div>
+
+    <div class="formula">"ס' 18 — היסוד העובדתי: <strong>התנהגותי</strong> — [שם] ביצע את המעשה של [תאר] ✓. <strong>נסיבתי</strong> — מתקיימת הנסיבה של [תאר נסיבה מהסעיף] ✓. <strong>תוצאתי</strong> — המעשה גרם ל[תאר תוצאה] ✓ / התוצאה לא התממשה → ניסיון."</div>
   </div>
 </section>
 
@@ -452,6 +550,8 @@ flowchart TD
       <tr><td><strong>טיפול רפואי</strong></td><td>מנתק רק אם: עילה יחידה+מיידית + כשלים חמורים</td><td>חסיין</td></tr>
       <tr><td><strong>החשת מוות</strong></td><td>= גרימת מוות, לא מנתק</td><td>יקירביץ'</td></tr>
     </table>
+
+    <div class="formula">"<strong>קש"ס עובדתי</strong> — אלמלא התנהגות [שם] של [תאר מעשה], התוצאה של [תאר] לא הייתה מתרחשת. על כן מתקיים קש"ס עובדתי. <strong>קש"ס משפטי</strong> — צפיות סובייקטיבי: [שם] יכול היה לצפות ש[תוצאה]. צפיות אובייקטיבי: אדם סביר צריך היה לצפות תוצאה כזו. [אם רלוונטי: לא מתקיימת גולגולת דקיקה / גורם זר מתערב כי...]."</div>
   </div>
 </section>
 
@@ -671,6 +771,8 @@ flowchart TD
     <p><strong>רשלנות:</strong> אי-מודעות כשצריכה להיות מודעות. מבחן "אדם מן היישוב". עונש: עד 3 שנים. ההבדל מקלות דעת: הרשלן לא מודע לסיכון.</p>
     <p><strong>אחריות קפידה:</strong> אין צורך ביסוד נפשי. נטל ההוכחה על הנאשם <span class="t t-c">גדיסי</span> <span class="t t-c">אוחנה</span></p>
   </div>
+
+  <div class="formula">"<strong>י"נ — הכרתי:</strong> [שם] היה מודע לטיב מעשהו — ידע שהוא [מעשה]. היה מודע לנסיבות — ידע ש[נסיבה]. היה מודע לאפשרות גרימת התוצאה — ידע שמעשהו עלול לגרום ל[תוצאה]. [אם עצימת עיניים: לחלופין, היה חשד ש... ולא בירר → עצימת עיניים (ס' 20(ג)(1)), שובין]. <strong>חפצי:</strong> [אם כוונה:] [שם] פעל <em>במטרה</em> לגרום ל[תוצאה] — כוונה (ס' 20(א)(1)). [אם הלכת צפיות:] לחלופין, צפה כאפשרות קרובה לוודאי — הלכת הצפיות. [אם פזיזות:] [שם] היה מודע לסיכון ונטל סיכון בלתי סביר [בשוויון נפש = אדישות / מתוך תקווה למנוע = קלות דעת]."</div>
 </section>
 
 
@@ -805,6 +907,8 @@ flowchart TD
       <li><strong>סיוע לניסיון = כן עניש</strong></li>
     </ul>
   </div>
+
+  <div class="formula">"התוצאה של [תאר] לא התממשה / הנסיבה לא התקיימה → נבחן ניסיון לפי ס' 25. <strong>3 מבחני עזר:</strong> (1) קרבה — [מעט/הרבה] שלבים חסרו להשלמה; (2) סרט אילם — צופה מהצד [היה/לא היה] מבין חד-משמעית שמדובר בעבירה; (3) צעד אפקטיבי — [שם] החל בשרשרת פעולות שהייתה מובילה להשלמה. <strong>מסקנה:</strong> חצה את קו ההכנה → ניסיון. <strong>י"נ:</strong> שכבה 1 — [י"נ העבירה]; שכבה 2 — כוונה להשלים. [אם לא צליח:] ס' 26 — לא ידע שהעבירה בלתי אפשרית → עדיין עניש."</div>
 </section>
 
 <!-- ======== STEP 4 — PARTIES ======== -->
@@ -880,6 +984,7 @@ flowchart TD
     </div>
 
     <div class="tip"><strong>למבחן:</strong> תמיד התחל מזיהוי המבצע העיקרי. רק אחרי שזיהית אותו — בדוק האם יש צדדים נוספים (בצוותא, משדל, מסייע).</div>
+    <div class="formula">"[שם] מקיים בעצמו את כל רכיבי היסוד העובדתי — התנהגותי: [מעשה]; נסיבתי: [נסיבה]; תוצאתי: [תוצאה]. מתקיים היסוד הנפשי — [פרט]. לכן [שם] הוא <strong>מבצע עיקרי</strong> לפי ס' 29(א) ונושא בעונש מלא."</div>
   </div>
 
   <!-- מבצע בצוותא -->
@@ -917,6 +1022,7 @@ flowchart TD
         <li><span class="t t-c">לוי</span> כל עבירה נוספת תיחשב גם כלפי השותף</li>
       </ul>
     </div>
+    <div class="formula">"[שם] ביצע חלק מהמעשים — [תאר חלקו]. [שם] היה מודע לחלקו, לחלק האחרים ולמזימה בכללותה. מדובר ב'גוף אחד בעל כמה זרועות' → <strong>מבצע בצוותא</strong> (ס' 29(ב)). [מבחני הבחנה: שליטה פונקציונאלית / תיקון 39 / גור אריה]. עונש מלא."</div>
   </div>
 
   <!-- מבצע באמצעות -->
@@ -941,6 +1047,7 @@ flowchart TD
     </div>
 
     <div class="warn"><strong>ההבדל ממשדל:</strong> באמצעות אחר = האחר הוא <strong>כלי</strong> (חל עליו סייג/אין י"נ). בשידול = האחר <strong>אוטונומי</strong> (העבירה מתקיימת גם אצלו).</div>
+    <div class="formula">"[שם] תרם לביצוע העבירה באמצעות [שם הכלי], שהפך ל<strong>כלי בידיו</strong> בשל [קטינות/אי שפיות/טעות/כורח/היעדר מח"פ]. [שם] היה מודע לנסיבת היות [הכלי] כלי → <strong>מבצע באמצעות</strong> (ס' 29(ג)). עונש מלא."</div>
   </div>
 
   <!-- משדל -->
@@ -974,6 +1081,7 @@ flowchart TD
         <li><strong>שרשור שידול</strong> (א' משדל את ב' שמשדל את ג') = שידול ממש <span class="t t-c">סוגקר</span></li>
       </ul>
     </div>
+    <div class="formula">"[שם] הביא את [משודל] לידי ביצוע העבירה באמצעות [שכנוע/עידוד/דרישה/לחץ]. <strong>י"ע:</strong> התנהגות משדלת ✓ + קיומו של משודל אחראי ✓ + ביצוע בפועל ✓ + קש"ס ✓. <strong>י"נ:</strong> מודע להתנהגות המשדלת + <em>כוונה</em> להביא לביצוע (אסקין). → <strong>משדל</strong> (ס' 30), עונש מלא (ס' 34ד)."</div>
   </div>
 
   <!-- מסייע -->
@@ -1006,6 +1114,7 @@ flowchart TD
     </div>
 
     <div class="warn"><strong>ניסיון לסיוע = לא עניש!</strong> (הרחבה על הרחבה). אבל <strong>סיוע לניסיון = כן עניש</strong>.</div>
+    <div class="formula">"[שם] סייע ל[מבצע] בכך ש[תאר סיוע]. <strong>4 תנאים:</strong> (1) פוטנציאל לסייע ✓; (2) לפני/בעת הביצוע ✓; (3) סיוע [פיזי/רוחני] ✓; (4) ייעוד מוחשי ✓. <strong>י"נ:</strong> כוונה לסייע + מודעות (יוסיפוב). [מבחני הבחנה מבצוותא: לבד לא חוצה לניסיון → מסייע]. → <strong>מסייע</strong> (ס' 31), <em>מחצית</em> העונש."</div>
   </div>
 
   <!-- הבחנה בין מבצע בצוותא למסייע -->
@@ -1052,6 +1161,7 @@ flowchart TD
     </div>
 
     <div class="warn"><strong>מדוע חשוב אם בצוותא או משדל?</strong> (1) תיוג וגינוי (2) עונש בפועל (3) עבירה נוספת: בצוותא = אדישות, משדל = רשלנות בלבד</div>
+    <div class="formula">"[מבצע] ביצע עבירה נוספת של [עבירה] שלא תוכננה מראש. לפי ס' 34א — <strong>4 תנאים:</strong> (1) אגב העבירה המקורית ✓; (2) עבירה שונה ✓; (3) צפיות סובייקטיבי ✓/✗; (4) צפיות אובייקטיבי ✓/✗. [שם השותף] כ<em>מבצע בצוותא</em> → אדישות (ס' 34א(1)) / כ<em>משדל/מסייע</em> → רשלנות בלבד (ס' 34א(2)). [אם אין עבירה ברשלנות → לא ניתן להרשיע]."</div>
   </div>
 
   <!-- רב עבריינים -->
@@ -1183,6 +1293,8 @@ flowchart TD
     </ul>
     <div class="warn"><strong>חריג:</strong> הטעות לא תמיד פוטרת. אם ראובן הטמין פצצה "דמה" שהתבררה כאמתית → פטור מרצח (טעה), אבל <strong>אחראי לעבירת איומים</strong>.</div>
   </div>
+
+  <div class="formula">"[שם] יטען לסייג הגנה עצמית (ס' 34י). נבחן 6 תנאים מצטברים: (1) <strong>נחיצות</strong> — [היה/לא היה] ניתן לפעול אחרת / לסגת (פרץ); (2) <strong>מיידיות</strong> — פעל [מיד/לא מיד] בסמוך לתקיפה; (3) <strong>להדוף תקיפה</strong> — [הדף בלבד / חצה למתקפה] (פרידמן); (4) <strong>שלא כדין</strong> — התקיפה [הייתה/לא הייתה] מכוח דין; (5) <strong>סכנה מוחשית</strong> — הסכנה [הייתה/לא הייתה] ממשית (ויניצקי); (6) <strong>התנהגות פסולה</strong> — [שם] [לא הביא / הביא] בהתנהגותו הפסולה לתקיפה (דבעאת). <strong>מסקנה:</strong> [כל/לא כל] התנאים מתקיימים → [פטור / ההגנה נדחית]."</div>
 </section>
 
 <!-- ======== EXAM CASES ======== -->
